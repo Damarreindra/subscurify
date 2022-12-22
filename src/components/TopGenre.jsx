@@ -1,13 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getArtist } from "../actions/spotifyAction";
 import Lottie from "lottie-react";
-import animationData from '../lotties/bird.json';
+import animationData from "../lotties/bird.json";
+import html2canvas from "html2canvas";
+
 function TopGenre() {
   const [access_token, set_access_token] = useState(null);
   const dispatch = useDispatch();
   const [artists, setArtists] = useState([]);
   const [songs, setSongs] = useState([]);
+  const [headliners, setHeadliners] = useState([])
+  const element = document.querySelector('#top-genre')
+  const exportAsImage = async (el, imageFileName) => {
+    const canvas = await html2canvas(element);
+    const image = canvas.toDataURL("image/png", 1.0);
+    downloadImage(image, imageFileName);
+  };
+  const downloadImage = (blob, fileName) => {
+    const fakeLink = window.document.createElement("a");
+    fakeLink.style = "display:none;";
+    fakeLink.download = fileName;
+
+    fakeLink.href = blob;
+
+    document.body.appendChild(fakeLink);
+    fakeLink.click();
+    document.body.removeChild(fakeLink);
+
+    fakeLink.remove();
+  };
 
   const { getArtistResult, getArtistLoading, getArtistError } = useSelector(
     (state) => state.ArtistReducer
@@ -23,7 +45,7 @@ function TopGenre() {
     }
     return hashParams;
   }
-
+  
   useEffect(() => {
     let params = getHashParams();
     let token = params.access_token;
@@ -39,22 +61,37 @@ function TopGenre() {
       setArtists(getArtistResult.items);
     }
   }, [getArtistResult]);
-
-
-
+  useEffect(() => {
+    if (artists) {
+      setHeadliners(artists.slice(0, 3));
+    }
+  }, [artists]);
+ console.log(headliners);
   return (
     <div id="top-genre">
-      <Lottie id='lottie-bird' animationData={animationData} style={{height:'250px'}} loop={true}/>
-      <div id="top-g" style={{}} className="mt-5 mx-auto">
-        <h5
-        id="top-g-title"
-        >
-          Your Top Artists
-        </h5>
+      <Lottie
+        id="lottie-bird"
+        animationData={animationData}
+        style={{ height: "250px" }}
+        loop={true}
+      />
+      <div id="preview">
+      <img id="preview-img" src="./pantai.svg" className="img-fluid" alt="..."></img>
+      {/* <div id="artist" >
         {artists.map((e) => {
-          return <h1 id="artist" className="text-center">{e.name}</h1>;
+          return (
+            
+            <h1 className="text-center">
+              {e.name}
+            </h1>
+          
+          );
         })}
+          </div> */}
+
       </div>
+      
+      
     </div>
   );
 }

@@ -3,15 +3,40 @@
 nav {
   height: 30px;
 }
-
+.footer{
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #000;
+  color: #fff;
+}
+.footer h4{
+  font-weight: 500;
+  color: #fff;
+}
 #hero {
   width: 100%;
-  height: 600px;
+  height: 100vh;
   /* position: absolute; */
   background-image: url("../public/wave-haikei.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+#login-btn{
+  background-image: url(../public/spotify.svg);
+  background-size: cover;
+  border: none;
+  margin-left: -250px;
+  z-index: 999;
+  position: relative;
+}
+#lottie-hero{
+  margin-top: -280px;
+  height: 550px;
+}
+#lottie-hero-img{
+  height: 475px;
 }
 #welcome {
   width: 100%;
@@ -65,13 +90,25 @@ nav {
   margin-left: 100px;
 }
 #img-logo {
-  margin-top: 100px;
+  margin-left: -150px;
+  margin-top: -20px;
+  height: 400px;
+  width: 800px;
 }
 #logo-text {
   margin-left: 30px;
-  margin-top: -20px;
+  margin-top: -100px;
 }
-
+#preview{
+  
+  margin-top: 280px;
+  margin-left: 150px;
+}
+#preview-img{
+  width: 540px;
+  height: 500px;
+  position: relative;
+}
 .btn-circle {
   width: 100px;
   height: 100px;
@@ -116,8 +153,10 @@ nav {
   color: #f82e9e;
 }
 #artist {
-  margin-top: 25px;
+  margin-top: -225px;
   color: #f36ab5;
+  position: relative;
+  z-index: 999;
 }
 #lottie {
   margin-left: 700px;
@@ -183,6 +222,61 @@ p {
   #top-genre {
     height: 550px;
   }
+  #img-logo{
+    margin-left: -110px;
+    width: 370px;
+  }
+  #lottie-hero{
+    margin-left: 20px;
+    margin-top: -80px;
+  }
+  #lottie-hero-img{
+    width: 200px;
+    margin-top: -10px;
+  }
+  #lottie-hero-img-2{
+    width: 300px;
+    margin-top: -420px;
+    margin-left: -100px;
+    position: relative
+  }
+  #logo-text{
+    margin-left: -80px;
+    margin-top: -120px;
+  }
+  #login-btn{
+    margin-left: -50px;
+    z-index: 1;
+  }
+}
+@media only screen and  (device-width: 393px) and (device-height: 851px)  {
+ 
+  #img-logo{
+    margin-left: -110px;
+    width: 390px;
+  }
+  #lottie-hero{
+    margin-left: 20px;
+    margin-top: -80px;
+  }
+  #lottie-hero-img{
+    width: 200px;
+    margin-top: -10px;
+  }
+  #lottie-hero-img-2{
+    width: 300px;
+    margin-top: -420px;
+    margin-left: -100px;
+    position: relative
+  }
+  #logo-text{
+    margin-left: -80px;
+    margin-top: -120px;
+  }
+  #login-btn{
+    margin-left: -50px;
+    z-index: 1;
+  }
 }
 
 @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
@@ -197,13 +291,70 @@ p {
     margin-left: -50px;
     margin-top: 30px;
   }
+  #img-logo{
+    margin-left: -120px;
+    width: 380px;
+  }
+  #lottie-hero{
+    margin-left: 20px;
+    margin-top: -80px;
+  }
+  #lottie-hero-img{
+    width: 200px;
+    margin-top: -10px;
+  }
+  #lottie-hero-img-2{
+    width: 300px;
+    margin-top: -420px;
+    margin-left: -100px;
+    position: relative
+  }
+  #logo-text{
+    margin-left: -80px;
+    margin-top: -120px;
+  }
+  #login-btn{
+    margin-left: -50px;
+    z-index: 1;
+  }
 }
+/* iphonexr */
 @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
   #lottie-bird {
     position: absolute;
     margin-left: -50px;
     margin-top: 30px;
   }
+  #img-logo{
+    margin-left: -130px;
+    width: 450px;
+  }
+  #lottie-hero{
+    margin-left: 20px;
+    margin-top: -80px;
+  }
+  #lottie-hero-img{
+    width: 200px;
+    margin-top: -10px;
+  }
+  #lottie-hero-img-2{
+    width: 300px;
+    margin-top: -380px;
+    margin-left: -100px;
+    position: relative
+  }
+  #logo-text{
+    margin-left: -80px;
+    margin-top: -120px;
+  }
+  #login-btn{
+    margin-left: -50px;
+    z-index: 1;
+  }
+  #top-genre{
+    height: 1000px;
+  }
+ 
 }
 @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
   #flower {
@@ -217,4 +368,117 @@ p {
     margin-left: -50px;
     margin-top: 30px;
   }
+  #img-logo{
+    margin-left: -130px;
+    width: 450px;
+  }
+  #lottie-hero{
+    margin-left: 20px;
+    margin-top: -80px;
+  }
+  #lottie-hero-img{
+    width: 200px;
+    margin-top: -10px;
+  }
+  #lottie-hero-img-2{
+    width: 300px;
+    margin-top: -420px;
+    margin-left: -100px;
+    position: relative
+  }
+  #logo-text{
+    margin-left: -80px;
+    margin-top: -120px;
+  }
+  #login-btn{
+    margin-left: -50px;
+    z-index: 1;
+  }
 }
+
+@media only screen 
+    and (device-width: 390px) 
+    and (device-height: 844px) 
+    and (-webkit-device-pixel-ratio: 3) { 
+      #flower {
+        position: absolute;
+        margin-bottom: 350px;
+        margin-left: -60px;
+        height: 80px;
+      }
+      #lottie-bird {
+        position: absolute;
+        margin-left: -50px;
+        margin-top: 30px;
+      }
+      #img-logo{
+        margin-left: -120px;
+        width: 410px;
+      }
+      #lottie-hero{
+        margin-left: 20px;
+        margin-top: -80px;
+      }
+      #lottie-hero-img{
+        width: 200px;
+        margin-top: -10px;
+      }
+      #lottie-hero-img-2{
+        width: 300px;
+        margin-top: -420px;
+        margin-left: -100px;
+        position: relative
+      }
+      #logo-text{
+        margin-left: -80px;
+        margin-top: -120px;
+      }
+      #login-btn{
+        margin-left: -50px;
+        z-index: 1;
+      }
+    }
+
+    @media only screen 
+    and (device-width: 375px) 
+    and (device-height: 667px) 
+    { 
+      
+      #flower {
+        position: absolute;
+        margin-bottom: 350px;
+        margin-left: -60px;
+        height: 80px;
+      }
+      #lottie-bird {
+        position: absolute;
+        margin-left: -50px;
+        margin-top: 30px;
+      }
+      #img-logo{
+        margin-left: -120px;
+        width: 380px;
+      }
+      #lottie-hero{
+        margin-left: 20px;
+        margin-top: -80px;
+      }
+      #lottie-hero-img{
+        width: 200px;
+        margin-top: -10px;
+      }
+      #lottie-hero-img-2{
+        width: 300px;
+        margin-top: -420px;
+        margin-left: -100px;
+        position: relative
+      }
+      #logo-text{
+        margin-left: -80px;
+        margin-top: -120px;
+      }
+      #login-btn{
+        margin-left: -50px;
+        z-index: 1;
+      }
+    }

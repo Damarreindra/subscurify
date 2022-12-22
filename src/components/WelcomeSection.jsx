@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import animationData from "../lotties/down.json";
 import animationData2 from "../lotties/flower.json";
-import animationData3 from "../lotties/flower2.json";
+import animationData3 from "../lotties/sun.json";
 import axios from "axios";
 import { Button } from "react-bootstrap";
 function WelcomeSection() {
@@ -36,6 +36,11 @@ function WelcomeSection() {
         loop={true}
       />
       </div>
+      <Lottie
+        animationData={animationData3}
+        style={{ height: "150px", marginLeft:'250px'}}
+        loop={true}
+      />
     </div>
   );
 }

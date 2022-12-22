@@ -16,7 +16,7 @@ export const getArtist = () =>{
 
         axios({
             method : "GET",
-            url : "https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=5&offset=5",
+            url : "https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=36&offset=5",
              headers : {Authorization: `Bearer ${access_token}`}
         })
             .then((res)=>{

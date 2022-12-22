@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../components/Footer'
 import HeroSection from '../components/HeroSection'
 import InfoSection from '../components/InfoSection'
 import NavbarUser from '../components/Navbar'
@@ -8,7 +9,7 @@ function Home() {
     <div>
         <NavbarUser/>
         <HeroSection/>
-     <InfoSection/>
+        <Footer/>
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../components/Footer'
 import HeroSection from '../components/HeroSection'
 import InfoSection from '../components/InfoSection'
 import LayerSection from '../components/LayerSection'
@@ -14,7 +15,7 @@ function Logged() {
         <WelcomeSection/>
         <TopGenre/>
         <LayerSection/>
-        <RateSection/>
+        <Footer/>
     </div>
   )
 }
