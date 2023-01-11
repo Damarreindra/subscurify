@@ -238,7 +238,7 @@ p {
 @media (min-width:320px)  { 
   #flower {
     position: absolute;
-    bottom: 200;
+    bottom: 200px;
   }
 }
 @media only screen and (max-width: 768px) {
