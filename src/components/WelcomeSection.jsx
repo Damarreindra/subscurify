@@ -13,7 +13,7 @@ function WelcomeSection() {
      <div className="container justify-content-center align-items-center">
      <Lottie
         animationData={animationData3}
-        style={{ height: "150px", marginLeft:'250px'}}
+        style={{ height: "150px", marginLeft:'250px', marginTop:'20px'}}
         loop={true}
       />
       <div id="welcome-to" className="d-flex justify-content-center">

@@ -15,6 +15,12 @@ nav {
   font-weight: 500;
   color: #fff;
 }
+#tutor{
+  font-family: "Kanit", sans-serif;
+  font-size: 70px;
+  color:#f82e9e;
+  margin-top: 250px;
+}
 #hero {
   width: 100%;
   height: 100vh;
@@ -104,9 +110,15 @@ nav {
   width: 100%;
   height: 50vh;
 }
+#img-top-container{
+  width: 70%;
+}
+#try{
+  
+}
 #top-genre {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 50px;
   width: 100%;
   height: 800px;
@@ -152,7 +164,7 @@ nav {
   height: 650px;
   width: 600px;
   margin-top: 200px;
-  background: url('../public/pantai.svg');
+  background: url('../public/pantai.png');
   background-size: cover;
 }
 #preview-img{
@@ -178,7 +190,7 @@ nav {
 #flower {
   position: absolute;
   left: 0;
-  bottom: 50px;
+  bottom: 0px;
 }
 #rate {
   font-family: "Kanit", sans-serif;
