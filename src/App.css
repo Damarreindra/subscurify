@@ -235,7 +235,12 @@ nav {
 p {
   font-family: "Kanit", sans-serif;
 }
-
+@media (min-width:320px)  { 
+  #flower {
+    position: absolute;
+    bottom: 0;
+  }
+}
 @media only screen and (max-width: 768px) {
   #welcome-text {
     margin-left: -5px;
