@@ -190,7 +190,7 @@ nav {
 #flower {
   position: absolute;
   left: 0;
-  bottom: 0px;
+  bottom: 50px;
 }
 #rate {
   font-family: "Kanit", sans-serif;
@@ -312,6 +312,92 @@ p {
     z-index: 1;
   }
 }
+/* iphone x */
+@media only screen and  (device-width: 375px) and (device-height: 812px)  {
+#tutor{
+  font-size: 42px;
+}
+#img-top-container{
+  height: 150px;
+  gap: 20px;
+}
+#flower{
+bottom: 0;
+}
+}
+
+/* iphone 6/7/8 */
+@media only screen and  (device-width: 375px) and (device-height: 667px)  {
+  #tutor{
+    font-size: 42px;
+  }
+  #img-top-container{
+    height: 150px;
+    gap: 20px;
+  }
+  #flower{
+  bottom: -200px;
+  }
+
+
+}
+@media screen and (max-device-width: 480px)
+ {
+  #tutor{
+    font-size: 42px;
+  }
+  #img-top-container{
+    height: 150px;
+    gap: 20px;
+  }
+  #flower{
+  bottom: 0;
+  }
+}
+ /* iphone 5/se */
+ @media only screen and  (device-width: 320px) and (device-height: 568px)  {
+  #tutor{
+    font-size: 42px;
+  }
+  #img-top-container{
+    height: 150px;
+    gap: 20px;
+  }
+  #flower{
+  bottom: -320px;
+  }
+  #tutor{
+    font-size: 30px;
+  }
+  #img-top-container{
+    height: 100px;
+    width: 100px;
+  }
+
+
+}
+/* iphone se */
+@media only screen and  (device-width: 375px) and (device-height: 667px){
+#flower{
+  bottom: -200px;
+}
+}
+
+/* iphone 6+/7/8+ */
+@media only screen and  (device-width: 414px) and (device-height: 736px)  {
+  #tutor{
+    font-size: 42px;
+  }
+  #img-top-container{
+    height: 150px;
+    gap: 20px;
+  }
+  #flower{
+  bottom: -180px;
+  }
+
+
+}
 @media only screen and  (device-width: 393px) and (device-height: 851px)  {
  
   #img-logo{
@@ -417,19 +503,29 @@ p {
   #top-genre{
     height: 1000px;
   }
+  #flower{
+    bottom: 0;
+  }
+  #img-top-container{
+    gap: 20px;
+  }
  
 }
 @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
   #flower {
-    position: absolute;
-    margin-bottom: 350px;
-    margin-left: -60px;
-    height: 80px;
+    bottom: 0;
   }
   #lottie-bird {
     position: absolute;
     margin-left: -50px;
     margin-top: 30px;
+  }
+  #tutor{
+    font-size: 40px;
+  }
+  #img-top-container{
+    height: 150px;
+    gap: 20px;
   }
   #img-logo{
     margin-left: -130px;

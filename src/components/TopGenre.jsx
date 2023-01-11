@@ -36,7 +36,7 @@ function TopGenre() {
     
       <div id="top-genre" className="d-flex align-items-center justify-content-center">
       
-        <div className="" id="tutor">
+        <div className="text-center" id="tutor">
          <p> CLICK ON A TIME FRAME, MY DUDE.</p>
          </div>
        <div id="img-top-container" className="d-flex justify-content-around">

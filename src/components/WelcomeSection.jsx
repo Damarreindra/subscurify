@@ -16,10 +16,10 @@ function WelcomeSection() {
         style={{ height: "150px", marginLeft:'250px', marginTop:'20px'}}
         loop={true}
       />
-      <div id="welcome-to" className="d-flex justify-content-center">
+      <div id="welcome-to" className="d-flex text-center justify-content-center">
         Welcome to Subscurify
       </div>
-      <div id="welcome-to-1" className="d-flex justify-content-center">
+      <div id="welcome-to-1" className="d-flex text-center justify-content-center">
         Find out more about your music taste below
       </div>
       <Lottie

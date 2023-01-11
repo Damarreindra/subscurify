@@ -139,6 +139,9 @@ const ModalLong = ({ show, HideHandler }) => {
            DOWNLOAD
         </button>
         </div>
+        <div>
+          <p className="text-center">if no result u can just refresh the web</p>
+        </div>
             <div className="container d-flex align-items-center mt-5">
       <div id="preview" className="d-flex justify-content-center">
       <div id="artist">
