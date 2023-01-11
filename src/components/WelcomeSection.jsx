@@ -7,21 +7,30 @@ import axios from "axios";
 import { Button } from "react-bootstrap";
 function WelcomeSection() {
   return (
-    <div id="welcome">
-      <div id="welcome-text">
-      <h1 id="welcome-to" className="text-center">
+    <>
+    <div className="" id="welcome">
+    <div id="welcome-text-container" className="d-flex align-items-center">
+     <div className="container justify-content-center align-items-center">
+     <Lottie
+        animationData={animationData3}
+        style={{ height: "150px", marginLeft:'250px'}}
+        loop={true}
+      />
+      <div id="welcome-to" className="d-flex justify-content-center">
         Welcome to Subscurify
-      </h1>
-      <h3 id="welcome-to-1" className="text-center">
+      </div>
+      <div id="welcome-to-1" className="d-flex justify-content-center">
         Find out more about your music taste below
-      </h3>
+      </div>
       <Lottie
-        id=""
         animationData={animationData}
-        style={{ height: "50px"}}
+        style={{ height: "55px"}}
         loop={true}
       />
       </div>
+      </div>
+      
+      
       <div id="flower">
       <Lottie
         animationData={animationData2}
@@ -36,12 +45,9 @@ function WelcomeSection() {
         loop={true}
       />
       </div>
-      <Lottie
-        animationData={animationData3}
-        style={{ height: "150px", marginLeft:'250px'}}
-        loop={true}
-      />
+    
     </div>
+    </>
   );
 }
 
