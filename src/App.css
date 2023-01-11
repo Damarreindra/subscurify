@@ -248,9 +248,7 @@ p {
   }
   #flower {
     position: absolute;
-    margin-bottom: 400px;
-    margin-left: -50px;
-    height: 80px;
+    bottom: 0;
   }
 
   #top-g {
