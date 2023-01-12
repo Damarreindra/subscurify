@@ -122,7 +122,8 @@ const ModalShort = ({ show, HideHandler }) => {
         show={show}
         aria-labelledby="contained-modal-title-vcenter"
         onHide={HideHandler}
-        size="md"
+        size="lg"
+        className="d-flex"
       >
         <div id="">
           <div className="main-popup sm-2">

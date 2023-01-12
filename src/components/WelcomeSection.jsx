@@ -30,21 +30,7 @@ function WelcomeSection() {
       </div>
       </div>
       
-      
-      <div id="flower">
-      <Lottie
-        animationData={animationData2}
-        style={{ height: "250px"}}
-        loop={true}
-      />
-      </div>
-      <div id="flower">
-      <Lottie
-        animationData={animationData2}
-        style={{ height: "250px", marginLeft:'50px', transform: 'rotate(25deg)'}}
-        loop={true}
-      />
-      </div>
+     
     
     </div>
     </>
