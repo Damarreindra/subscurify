@@ -20,7 +20,7 @@ const ModalLong = ({ show, HideHandler }) => {
   const [lineups_3, setLineups_3] = useState([])
   const [lineups_4, setLineups_4] = useState([])
 
-  const element = document.querySelector("#preview");
+  const element = document.querySelector("#preview")[0];
   const exportAsImage = async (imageFileName) => {
     const canvas = await html2canvas(element);
     const image = canvas.toDataURL("image/png", 1.0);
