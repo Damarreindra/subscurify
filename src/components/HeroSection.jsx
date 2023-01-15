@@ -5,7 +5,7 @@ import animationData from '../lotties/mice.json';
 import animationData2 from '../lotties/camp.json';
 import './hero.css'
 function HeroSection() {
-    const CLIENT_ID = "f6c117e7385346ae81e2335095e312bd";
+  const CLIENT_ID = "f6c117e7385346ae81e2335095e312bd";
   const REDIRECT_URI = "https://subscurify.netlify.app/home";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";

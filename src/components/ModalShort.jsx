@@ -20,11 +20,26 @@ const ModalShort = ({ show, HideHandler }) => {
   const [lineups_3, setLineups_3] = useState([])
   const [lineups_4, setLineups_4] = useState([])
 
-  const element = document.querySelector("#preview")[0];
+  const element = document.querySelector("#preview");
   const exportAsImage = async (imageFileName) => {
     const canvas = await html2canvas(element);
     const image = canvas.toDataURL("image/png", 1.0);
     downloadImage(image, imageFileName);
+  };
+  const uploadImage = () => {
+    const data = new FormData();
+    data.append("file", image);
+    data.append("upload_preset", "tutorial");
+    data.append("cloud_name", "dttd52ltg");
+    fetch("https://api.cloudinary.com/v1_1/dttd52ltg/image/upload", {
+      method: "post",
+      body: data,
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        setUrl(data.url);
+      })
+      .catch((err) => console.log(err));
   };
   const downloadImage = (blob, fileName) => {
     const fakeLink = window.document.createElement("a");

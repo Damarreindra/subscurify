@@ -9,12 +9,6 @@ const MediumTerm = () => {
   const HandleShowModal = () => {
     setIsModalShow(!isModalShow);
   };
-  const getLS = localStorage.getItem("token")
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [publish] = useState(false)
-  
-  const createdAt = Date.now()
 
     
   return (
