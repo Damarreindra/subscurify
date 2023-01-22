@@ -21,11 +21,14 @@ const ModalLong = ({ show, HideHandler }) => {
   const [lineups_4, setLineups_4] = useState([])
 
   const element = document.querySelector("#preview");
+  
   const exportAsImage = async (imageFileName) => {
+    
     const canvas = await html2canvas(element);
     const image = canvas.toDataURL("image/png", 1.0);
     downloadImage(image, imageFileName);
   };
+ 
   const downloadImage = (blob, fileName) => {
     const fakeLink = window.document.createElement("a");
     fakeLink.style = "display:none;";

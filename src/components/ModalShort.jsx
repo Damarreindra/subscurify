@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getArtistShort, getUname } from "../actions/spotifyAction";
 import html2canvas from "html2canvas";
+import axios from "axios";
+import fileDownload from "js-file-download";
 
 
 
@@ -11,6 +13,7 @@ const ModalShort = ({ show, HideHandler }) => {
     const dispatch = useDispatch();
   const [artists, setArtists] = useState([]);
   const [songs, setSongs] = useState([]);
+  const [url, setUrl] = useState('')
   const [uname, setUname] = useState('')
   const [headliners, setHeadliners] = useState('')
   const [co_headliners, setCo_headliners] = useState([])
@@ -21,12 +24,14 @@ const ModalShort = ({ show, HideHandler }) => {
   const [lineups_4, setLineups_4] = useState([])
 
   const element = document.querySelector("#preview");
-  const exportAsImage = async (imageFileName) => {
+  
+  const exportAsImage = async () => {
     const canvas = await html2canvas(element);
     const image = canvas.toDataURL("image/png", 1.0);
-    downloadImage(image, imageFileName);
+    uploadImage(image);
   };
-  const uploadImage = () => {
+
+  const uploadImage = (image) => {
     const data = new FormData();
     data.append("file", image);
     data.append("upload_preset", "tutorial");
@@ -41,19 +46,18 @@ const ModalShort = ({ show, HideHandler }) => {
       })
       .catch((err) => console.log(err));
   };
-  const downloadImage = (blob, fileName) => {
-    const fakeLink = window.document.createElement("a");
-    fakeLink.style = "display:none;";
-    fakeLink.download = fileName;
 
-    fakeLink.href = blob;
+    const handleDownload = (url, filename) => {
+      axios
+        .get(url, {
+          responseType: "blob"
+        })
+        .then((res) => {
+          fileDownload(res.data, filename);
+          
+        });
+    };
 
-    document.body.appendChild(fakeLink);
-    fakeLink.click();
-    document.body.removeChild(fakeLink);
-
-    fakeLink.remove();
-  };
   const { getArtistShortResult } = useSelector(
     (state) => state.ArtistReducer
   );
@@ -148,6 +152,23 @@ const ModalShort = ({ show, HideHandler }) => {
             <div className="d-flex justify-content-center">
             <button
             onClick={()=>exportAsImage()}
+            
+            type="button"
+            className="btn mt-5 btn-lg justify-content-center"
+            style={{backgroundColor:'#f82e9e', color:'#c4faf6', fontWeight:'700'}}
+        >
+           DOWNLOAD
+        </button>
+        </div>
+
+        <div className="d-flex justify-content-center">
+        <button
+            onClick={() => {
+              handleDownload(
+                url,
+                "subscurify.jpg"
+              );
+            }}
             type="button"
             className="btn mt-5 btn-lg justify-content-center"
             style={{backgroundColor:'#f82e9e', color:'#c4faf6', fontWeight:'700'}}
