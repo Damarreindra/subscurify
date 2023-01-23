@@ -1,14 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getArtistLong, getUname } from "../actions/spotifyAction";
 import html2canvas from "html2canvas";
+import exportAsImage from "../utils/exportAsImage";
 
 
 
 const ModalLong = ({ show, HideHandler }) => {
     const dispatch = useDispatch();
+   
   const [artists, setArtists] = useState([]);
   const [songs, setSongs] = useState([]);
   const [uname, setUname] = useState('')
@@ -19,29 +21,8 @@ const ModalLong = ({ show, HideHandler }) => {
   const [lineups_2, setLineups_2] = useState([])
   const [lineups_3, setLineups_3] = useState([])
   const [lineups_4, setLineups_4] = useState([])
+  const exportRef = useRef()
 
-  const element = document.querySelector("#preview");
-  
-  const exportAsImage = async (imageFileName) => {
-    
-    const canvas = await html2canvas(element);
-    const image = canvas.toDataURL("image/png", 1.0);
-    downloadImage(image, imageFileName);
-  };
- 
-  const downloadImage = (blob, fileName) => {
-    const fakeLink = window.document.createElement("a");
-    fakeLink.style = "display:none;";
-    fakeLink.download = fileName;
-
-    fakeLink.href = blob;
-
-    document.body.appendChild(fakeLink);
-    fakeLink.click();
-    document.body.removeChild(fakeLink);
-
-    fakeLink.remove();
-  };
   const { getArtistLongResult } = useSelector(
     (state) => state.ArtistReducer
   );
@@ -135,7 +116,7 @@ const ModalLong = ({ show, HideHandler }) => {
             </div>
             <div className="d-flex justify-content-center">
             <button
-            onClick={()=>exportAsImage()}
+             onClick={() => exportAsImage(exportRef.current, getUnameResult.display_name+" Long Term")}
             type="button"
             className="btn mt-5 btn-lg justify-content-center"
             style={{backgroundColor:'#f82e9e', color:'#c4faf6', fontWeight:'700'}}
@@ -147,7 +128,7 @@ const ModalLong = ({ show, HideHandler }) => {
           <p className="text-center">if no result u can just refresh the web</p>
         </div>
             <div className="container d-flex align-items-center mt-5">
-      <div id="preview" className="d-flex justify-content-center">
+      <div ref={exportRef} id="preview" className="d-flex justify-content-center">
       <div id="artist">
         <p id="uname" className="text-center">{capitalizeFirstLetter(uname)}'s</p>
         <p id="fest" className="text-center">LAGOON FEST 2023</p>

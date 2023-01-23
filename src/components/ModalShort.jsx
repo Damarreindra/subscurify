@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -6,14 +6,13 @@ import { getArtistShort, getUname } from "../actions/spotifyAction";
 import html2canvas from "html2canvas";
 import axios from "axios";
 import fileDownload from "js-file-download";
+import exportAsImage from "../utils/exportAsImage";
 
 
 
 const ModalShort = ({ show, HideHandler }) => {
     const dispatch = useDispatch();
   const [artists, setArtists] = useState([]);
-  const [songs, setSongs] = useState([]);
-  const [url, setUrl] = useState('')
   const [uname, setUname] = useState('')
   const [headliners, setHeadliners] = useState('')
   const [co_headliners, setCo_headliners] = useState([])
@@ -21,43 +20,9 @@ const ModalShort = ({ show, HideHandler }) => {
   const [lineups, setLineups] = useState([])
   const [lineups_2, setLineups_2] = useState([])
   const [lineups_3, setLineups_3] = useState([])
-  const [lineups_4, setLineups_4] = useState([])
-
-  const element = document.querySelector("#preview");
+  const [lineups_4, setLineups_4] = useState([])  
+  const exportRef = useRef();
   
-  const exportAsImage = async () => {
-    const canvas = await html2canvas(element);
-    const image = canvas.toDataURL("image/png", 1.0);
-    uploadImage(image);
-  };
-
-  const uploadImage = (image) => {
-    const data = new FormData();
-    data.append("file", image);
-    data.append("upload_preset", "tutorial");
-    data.append("cloud_name", "dttd52ltg");
-    fetch("https://api.cloudinary.com/v1_1/dttd52ltg/image/upload", {
-      method: "post",
-      body: data,
-    })
-      .then((resp) => resp.json())
-      .then((data) => {
-        setUrl(data.url);
-      })
-      .catch((err) => console.log(err));
-  };
-
-    const handleDownload = (url, filename) => {
-      axios
-        .get(url, {
-          responseType: "blob"
-        })
-        .then((res) => {
-          fileDownload(res.data, filename);
-          
-        });
-    };
-
   const { getArtistShortResult } = useSelector(
     (state) => state.ArtistReducer
   );
@@ -78,13 +43,13 @@ const ModalShort = ({ show, HideHandler }) => {
         if (getArtistShortResult) {
           setArtists(getArtistShortResult.items);
         }
-      }, [getArtistShort()]);
+      }, [getArtistShortResult, dispatch]);
     
       useEffect(()=>{
         if(getUnameResult){
           setUname(getUnameResult.display_name)
         }
-      },[getUname()])
+      },[getUnameResult, dispatch])
      
       useEffect(() => {
         if (artists) {
@@ -130,7 +95,7 @@ const ModalShort = ({ show, HideHandler }) => {
     
       
     
-    
+
       function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
       }
@@ -151,24 +116,8 @@ const ModalShort = ({ show, HideHandler }) => {
             </div>
             <div className="d-flex justify-content-center">
             <button
-            onClick={()=>exportAsImage()}
+            onClick={() => exportAsImage(exportRef.current, getUnameResult.display_name+" Short Term")}
             
-            type="button"
-            className="btn mt-5 btn-lg justify-content-center"
-            style={{backgroundColor:'#f82e9e', color:'#c4faf6', fontWeight:'700'}}
-        >
-           DOWNLOAD
-        </button>
-        </div>
-
-        <div className="d-flex justify-content-center">
-        <button
-            onClick={() => {
-              handleDownload(
-                url,
-                "subscurify.jpg"
-              );
-            }}
             type="button"
             className="btn mt-5 btn-lg justify-content-center"
             style={{backgroundColor:'#f82e9e', color:'#c4faf6', fontWeight:'700'}}
@@ -182,7 +131,7 @@ const ModalShort = ({ show, HideHandler }) => {
         </div>
      
             <div className="container d-flex align-items-center">
-      <div id="preview" className="d-flex justify-content-center">
+      <div ref={exportRef} id="preview" className="d-flex justify-content-center">
       <div id="artist">
         <p id="uname" className="text-center">{capitalizeFirstLetter(uname)}'s</p>
         <p id="fest" className="text-center">LAGOON FEST 2023</p>

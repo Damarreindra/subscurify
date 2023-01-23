@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getArtist, getUname } from "../actions/spotifyAction";
 import html2canvas from "html2canvas";
+import exportAsImage from "../utils/exportAsImage";
 
 
 
@@ -19,28 +20,8 @@ const ModalMedium = ({ show, HideHandler }) => {
   const [lineups_2, setLineups_2] = useState([])
   const [lineups_3, setLineups_3] = useState([])
   const [lineups_4, setLineups_4] = useState([])
-
-  const element = document.querySelector("#preview");
-  const fileName = 'subscurify'
-  const exportAsImage = async (fileName) => {
-    const canvas = await html2canvas(element);
-    const image = canvas.toDataURL("image/png", 1.0);
-    downloadImage(image, fileName);
-  };
- 
-  const downloadImage = (blob, fileName) => {
-    const fakeLink = window.document.createElement("a");
-    fakeLink.style = "display:none;";
-    fakeLink.download = fileName;
-
-    fakeLink.href = blob;
-
-    document.body.appendChild(fakeLink);
-    fakeLink.click();
-    document.body.removeChild(fakeLink);
-
-    fakeLink.remove();
-  };
+  const exportRef = useRef();
+  
   const { getArtistResult } = useSelector(
     (state) => state.ArtistReducer
   );
@@ -134,7 +115,7 @@ const ModalMedium = ({ show, HideHandler }) => {
             </div>
             <div className="d-flex justify-content-center">
             <button
-            onClick={()=>exportAsImage()}
+              onClick={() => exportAsImage(exportRef.current, getUnameResult.display_name+" Med Term")}
             type="button"
             className="btn mt-5 btn-lg justify-content-center"
             style={{backgroundColor:'#f82e9e', color:'#c4faf6', fontWeight:'700'}}
@@ -146,7 +127,7 @@ const ModalMedium = ({ show, HideHandler }) => {
           <p className="text-center">if no result u can just refresh the web</p>
         </div>
             <div className="container d-flex align-items-center mt-5">
-      <div id="preview" className="d-flex justify-content-center">
+      <div ref={exportRef} id="preview" className="d-flex justify-content-center">
       <div id="artist">
         <p id="uname" className="text-center">{capitalizeFirstLetter(uname)}'s</p>
         <p id="fest" className="text-center">LAGOON FEST 2023</p>
