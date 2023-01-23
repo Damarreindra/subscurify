@@ -1,9 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-
-import Lottie from "lottie-react";
-import animationData from "../lotties/bird.json";
-import html2canvas from "html2canvas";
 import ShortTerm from "./ShortModal";
 import MediumTerm from "./Modal";
 import LongTerm from "./LongModal";
