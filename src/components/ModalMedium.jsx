@@ -40,49 +40,49 @@ const ModalMedium = ({ show, HideHandler }) => {
       }, []);
     
       useEffect(() => {
-        if (token) {
+        if (getArtistResult) {
           setArtists(getArtistResult.items);
         }
       }, [getArtist()]);
     
       useEffect(()=>{
-        if(token){
+        if(getUnameResult){
           setUname(getUnameResult.display_name)
         }
       },[getUname(), dispatch])
      
       useEffect(() => {
-        if (token) {
+        if (artists) {
           setHeadliners(artists.map((e)=>e.name).slice(0, 1).toString());
         }
       }, [artists, dispatch]);
     
       useEffect(() => {
-        if (token) {
+        if (artists) {
           setCo_headliners(artists.map((e)=>e.name).slice(1, 3));
         }
       }, [artists, dispatch]);
     
       useEffect(()=>{
-        if(token){
+        if(artists){
           setTop_bill(artists.map((e)=>e.name).slice(3, 6))
         }
       }, [artists, dispatch])
     
       useEffect(()=>{
-        if(token){
+        if(artists){
           setLineups(artists.map((e)=>e.name).slice(6, 9))
         }
       }, [artists, dispatch])
     
        useEffect(()=>{
-        if(token){
+        if(artists){
           setLineups_2(artists.map((e)=>e.name).slice(9, 12))
         }
       }, [artists, dispatch])
     
       useEffect(()=>{
-        if(token){
+        if(artists){
           setLineups_3(artists.map((e)=>e.name).slice(12, 15))
         }
       }, [artists, dispatch])
