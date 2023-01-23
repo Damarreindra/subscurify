@@ -61,7 +61,7 @@ const ModalShort = ({ show, HideHandler }) => {
         if (artists) {
           setCo_headliners(artists.map((e)=>e.name).slice(1, 3));
         }
-      }, [artists, dispatc]);
+      }, [artists, dispatch]);
     
       useEffect(()=>{
         if(artists){
