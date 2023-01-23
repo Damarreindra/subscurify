@@ -49,49 +49,44 @@ const ModalLong = ({ show, HideHandler }) => {
         if(getUnameResult){
           setUname(getUnameResult.display_name)
         }
-      },[getUname()])
+      },[getUnameResult, dispatch])
      
       useEffect(() => {
         if (artists) {
           setHeadliners(artists.map((e)=>e.name).slice(0, 1).toString());
         }
-      }, [artists]);
+      }, [artists, dispatch]);
     
       useEffect(() => {
         if (artists) {
           setCo_headliners(artists.map((e)=>e.name).slice(1, 3));
         }
-      }, [artists]);
+      }, [artists, dispatch]);
     
       useEffect(()=>{
         if(artists){
           setTop_bill(artists.map((e)=>e.name).slice(3, 6))
         }
-      }, [artists])
+      }, [artists, dispatch])
     
       useEffect(()=>{
         if(artists){
           setLineups(artists.map((e)=>e.name).slice(6, 9))
         }
-      }, [artists])
+      }, [artists, dispatch])
     
        useEffect(()=>{
         if(artists){
           setLineups_2(artists.map((e)=>e.name).slice(9, 12))
         }
-      }, [artists])
+      }, [artists, dispatch])
     
       useEffect(()=>{
         if(artists){
           setLineups_3(artists.map((e)=>e.name).slice(12, 15))
         }
-      }, [artists])
-    
-      useEffect(()=>{
-        if(artists){
-          setLineups_4(artists.map((e)=>e.name).slice(15, 18))
-        }
-      }, [artists])
+      }, [artists, dispatch])
+  
     
       
     
