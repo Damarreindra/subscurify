@@ -49,7 +49,7 @@ const ModalLong = ({ show, HideHandler }) => {
         if(getUnameResult){
           setUname(getUnameResult.display_name)
         }
-      },[getUnameResult, dispatch])
+      },[getUname(), dispatch])
      
       useEffect(() => {
         if (artists) {

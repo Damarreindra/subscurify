@@ -49,19 +49,19 @@ const ModalShort = ({ show, HideHandler }) => {
         if(getUnameResult){
           setUname(getUnameResult.display_name)
         }
-      },[getUnameResult, dispatch])
+      },[getUname(), dispatch])
      
       useEffect(() => {
         if (artists) {
           setHeadliners(artists.map((e)=>e.name).slice(0, 1).toString());
         }
-      }, [artists]);
+      }, [artists, dispatch]);
     
       useEffect(() => {
         if (artists) {
           setCo_headliners(artists.map((e)=>e.name).slice(1, 3));
         }
-      }, [artists]);
+      }, [artists, dispatc]);
     
       useEffect(()=>{
         if(artists){

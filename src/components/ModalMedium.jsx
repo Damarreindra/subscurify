@@ -10,6 +10,7 @@ import exportAsImage from "../utils/exportAsImage";
 
 const ModalMedium = ({ show, HideHandler }) => {
     const dispatch = useDispatch();
+    const token = localStorage.getItem('token')
   const [artists, setArtists] = useState([]);
   const [songs, setSongs] = useState([]);
   const [uname, setUname] = useState('')
@@ -39,49 +40,49 @@ const ModalMedium = ({ show, HideHandler }) => {
       }, []);
     
       useEffect(() => {
-        if (getArtistResult) {
+        if (token) {
           setArtists(getArtistResult.items);
         }
       }, [getArtist()]);
     
       useEffect(()=>{
-        if(getUnameResult){
+        if(token){
           setUname(getUnameResult.display_name)
         }
-      },[getUnameResult, dispatch])
+      },[getUname(), dispatch])
      
       useEffect(() => {
-        if (artists) {
+        if (token) {
           setHeadliners(artists.map((e)=>e.name).slice(0, 1).toString());
         }
       }, [artists, dispatch]);
     
       useEffect(() => {
-        if (artists) {
+        if (token) {
           setCo_headliners(artists.map((e)=>e.name).slice(1, 3));
         }
       }, [artists, dispatch]);
     
       useEffect(()=>{
-        if(artists){
+        if(token){
           setTop_bill(artists.map((e)=>e.name).slice(3, 6))
         }
       }, [artists, dispatch])
     
       useEffect(()=>{
-        if(artists){
+        if(token){
           setLineups(artists.map((e)=>e.name).slice(6, 9))
         }
       }, [artists, dispatch])
     
        useEffect(()=>{
-        if(artists){
+        if(token){
           setLineups_2(artists.map((e)=>e.name).slice(9, 12))
         }
       }, [artists, dispatch])
     
       useEffect(()=>{
-        if(artists){
+        if(token){
           setLineups_3(artists.map((e)=>e.name).slice(12, 15))
         }
       }, [artists, dispatch])
