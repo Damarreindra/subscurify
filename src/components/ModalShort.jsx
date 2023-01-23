@@ -138,14 +138,14 @@ const ModalShort = ({ show, HideHandler }) => {
         
     
             
-            <h1 id="headliner" className="text-center mt-3">
+        <h1 id="headliner" className="text-center mt-3">
               {headliners.toUpperCase()}
             </h1>
 
             <div id="co_headliner" className="d-flex justify-content-center justify-content-around mt-3">
             {co_headliners.map((e)=>{
               return(
-                <h2 id="co_headlinerer" className="text-center">{e}</h2>
+                <div id="co_headlinerer" className="w-100 text-center">{e}</div>
               )
             })}
             </div>
@@ -153,7 +153,7 @@ const ModalShort = ({ show, HideHandler }) => {
             <div id="top_bill" className="d-flex justify-content-center justify-content-around mt-3">
             {top_bill.map((e)=>{
               return(
-                <h3 id="top_biller" className="text-center">{e}</h3>
+                <div id="top_biller" className="w-25 text-center">{e}</div>
               )
             })}
             </div>
@@ -161,7 +161,7 @@ const ModalShort = ({ show, HideHandler }) => {
             <div id="lineup" className="d-flex justify-content-center justify-content-around mt-3">
             {lineups.map((e)=>{
               return(
-                <h4 id="lineuper" className="text-center">{e}</h4>
+                <div id="lineuper" className="w-25 text-center">{e}</div>
               )
             })}
             </div>
@@ -169,7 +169,7 @@ const ModalShort = ({ show, HideHandler }) => {
             <div id="lineup" className="d-flex justify-content-center justify-content-around mt-2">
             {lineups_2.map((e)=>{
               return(
-                <h4 id="lineuper" className="text-center">{e}</h4>
+                <div id="lineuper" className="w-25 text-center">{e}</div>
               )
             })}
             </div>
@@ -177,20 +177,10 @@ const ModalShort = ({ show, HideHandler }) => {
             <div id="lineup" className="d-flex justify-content-center justify-content-around mt-2">
             {lineups_3.map((e)=>{
               return(
-                <h4 id="lineuper" className="text-center">{e}</h4>
+                <div id="lineuper" className="w-25 text-center">{e}</div>
               )
             })}
             </div>
-
-            <div id="lineup" className="d-flex justify-content-center justify-content-around mt-2">
-            {lineups_4.map((e)=>{
-              return(
-                <h4 id="lineuper" className="text-center">{e}</h4>
-              )
-            })}
-            </div>
-
-        
           </div>
 
       </div>

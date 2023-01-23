@@ -59,14 +59,12 @@ nav {
   font-size: 30px;
   font-weight: 600;
 }
-#top_bill{
-  
-}
 #lineup{
-  width: 70vh;
+  
 }
 #lineuper{
   font-family: Futura, "Trebuchet MS";
+  font-size: 20px;
 }
 #top_biller{
   font-family: Futura, "Trebuchet MS";
@@ -236,10 +234,7 @@ p {
   font-family: "Kanit", sans-serif;
 }
 @media (min-width:320px)  { 
-  #flower {
-    position: absolute;
-    bottom: 200px;
-  }
+  
 }
 @media only screen and (max-width: 768px) {
   #welcome-text {
@@ -250,6 +245,33 @@ p {
   }
   #welcome-to-1 {
     font-size: 15px;
+  }
+  #preview{
+    width: 320px;
+  }
+  #headliner{
+    font-size: 35px;
+  }
+  #artist{
+    width: 300px;
+  }
+  #lineup{
+    width: 300px;
+  }
+  #lineuper{
+    font-size: 16px;
+  }
+  #top_biller{
+    font-size: 18px;
+  }
+  #co_headlinerer{
+    font-size: 20px;
+  }
+  #top-biller{
+    font-size: 12px;
+  }
+  #img-top-container img{
+    height: 100px;
   }
   #flower {
     position: absolute;
@@ -321,8 +343,11 @@ p {
   font-size: 42px;
 }
 #img-top-container{
-  height: 150px;
+  height: 120px;
   gap: 20px;
+}
+#img-top-container img{
+  height: 100px;
 }
 #flower{
 bottom: -200px;
@@ -338,6 +363,7 @@ bottom: -200px;
     height: 150px;
     gap: 20px;
   }
+
   #flower{
   bottom: -200px;
   }
