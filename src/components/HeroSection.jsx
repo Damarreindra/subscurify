@@ -6,8 +6,8 @@ import animationData2 from '../lotties/camp.json';
 import './hero.css'
 function HeroSection() {
   const CLIENT_ID = "f6c117e7385346ae81e2335095e312bd";
-  const REDIRECT_URI = "https://subscurify.netlify.app/home";
-  // const REDIRECT_URI = "http://localhost:3000/home";
+  // const REDIRECT_URI = "https://subscurify.netlify.app/home";
+  const REDIRECT_URI = "http://localhost:3000/home";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
   const SCOPE = "user-top-read"

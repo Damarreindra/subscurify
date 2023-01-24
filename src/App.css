@@ -59,8 +59,9 @@ nav {
   font-size: 30px;
   font-weight: 600;
 }
-#lineup{
-  
+#spotify-logo{
+  width: 150px;
+  margin-left: -70px;
 }
 #lineuper{
   font-family: Futura, "Trebuchet MS";
@@ -239,6 +240,11 @@ p {
 @media only screen and (max-width: 768px) {
   #welcome-text {
     margin-left: -5px;
+  }
+  #spotify-logo{
+    width: 150px;
+    margin-left: 0px;
+    margin-top: 45px;
   }
   #welcome-to {
     font-size: 50px;

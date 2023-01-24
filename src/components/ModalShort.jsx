@@ -126,16 +126,16 @@ const ModalShort = ({ show, HideHandler }) => {
             <div className="container d-flex align-items-center">
       <div ref={exportRef} id="preview" className="d-flex justify-content-center">
       <div id="artist">
+     
         <p id="uname" className="text-center">{capitalizeFirstLetter(uname)}'s</p>
         <p id="fest" className="text-center">LAGOON FEST 2023</p>
         
-    
-            
         <h1 id="headliner" className="text-center mt-3">
               {headliners.toUpperCase()}
             </h1>
 
             <div id="co_headliner" className="d-flex justify-content-center justify-content-around mt-3">
+          
             {co_headliners.map((e)=>{
               return(
                 <div id="co_headlinerer" className="w-100 text-center">{e}</div>
@@ -174,9 +174,11 @@ const ModalShort = ({ show, HideHandler }) => {
               )
             })}
             </div>
+           
           </div>
-
+          
       </div>
+      
       </div>
           </div>
         </div>
