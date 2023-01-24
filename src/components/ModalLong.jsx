@@ -10,9 +10,6 @@ import exportAsImage from "../utils/exportAsImage";
 
 const ModalLong = ({ show, HideHandler }) => {
     const dispatch = useDispatch();
-   
-  const [artists, setArtists] = useState([]);
-  const [songs, setSongs] = useState([]);
   const [uname, setUname] = useState('')
   const [headliners, setHeadliners] = useState('')
   const [co_headliners, setCo_headliners] = useState([])
@@ -20,7 +17,6 @@ const ModalLong = ({ show, HideHandler }) => {
   const [lineups, setLineups] = useState([])
   const [lineups_2, setLineups_2] = useState([])
   const [lineups_3, setLineups_3] = useState([])
-  const [lineups_4, setLineups_4] = useState([])
   const exportRef = useRef()
 
   const { getArtistLongResult } = useSelector(
@@ -39,12 +35,7 @@ const ModalLong = ({ show, HideHandler }) => {
         dispatch(getUname());
       }, []);
     
-      useEffect(() => {
-        if (getArtistLongResult) {
-          setArtists(getArtistLongResult.items);
-        }
-      }, [getArtistLong()]);
-    
+      
       useEffect(()=>{
         if(getUnameResult){
           setUname(getUnameResult.display_name)
@@ -52,40 +43,41 @@ const ModalLong = ({ show, HideHandler }) => {
       },[getUname(), dispatch])
      
       useEffect(() => {
-        if (artists) {
-          setHeadliners(artists.map((e)=>e.name).slice(0, 1).toString());
+        if (getArtistLongResult) {
+          setHeadliners(getArtistLongResult.items.map((e)=>e.name).slice(0, 1).toString());
         }
-      }, [artists, dispatch]);
+      }, [getArtistLongResult, dispatch]);
     
       useEffect(() => {
-        if (artists) {
-          setCo_headliners(artists.map((e)=>e.name).slice(1, 3));
+        if (getArtistLongResult) {
+          setCo_headliners(getArtistLongResult.items.map((e)=>e.name).slice(1, 3));
         }
-      }, [artists, dispatch]);
+      }, [getArtistLongResult, dispatch]);
     
       useEffect(()=>{
-        if(artists){
-          setTop_bill(artists.map((e)=>e.name).slice(3, 6))
+        if(getArtistLongResult){
+          setTop_bill(getArtistLongResult.items.map((e)=>e.name).slice(3, 6))
         }
-      }, [artists, dispatch])
+      }, [getArtistLongResult, dispatch])
     
       useEffect(()=>{
-        if(artists){
-          setLineups(artists.map((e)=>e.name).slice(6, 9))
+        if(getArtistLongResult){
+          setLineups(getArtistLongResult.items.map((e)=>e.name).slice(6, 9))
         }
-      }, [artists, dispatch])
+      }, [getArtistLongResult, dispatch])
     
        useEffect(()=>{
-        if(artists){
-          setLineups_2(artists.map((e)=>e.name).slice(9, 12))
+        if(getArtistLongResult){
+          setLineups_2(getArtistLongResult.items.map((e)=>e.name).slice(9, 12))
         }
-      }, [artists, dispatch])
+      }, [getArtistLongResult, dispatch])
     
       useEffect(()=>{
-        if(artists){
-          setLineups_3(artists.map((e)=>e.name).slice(12, 15))
+        if(getArtistLongResult){
+          setLineups_3(getArtistLongResult.items.map((e)=>e.name).slice(12, 15))
         }
-      }, [artists, dispatch])
+      }, [getArtistLongResult, dispatch])
+  
   
     
       

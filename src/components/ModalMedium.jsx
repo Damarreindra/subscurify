@@ -10,9 +10,7 @@ import exportAsImage from "../utils/exportAsImage";
 
 const ModalMedium = ({ show, HideHandler }) => {
     const dispatch = useDispatch();
-    const token = localStorage.getItem('token')
-  const [artists, setArtists] = useState([]);
-  const [songs, setSongs] = useState([]);
+  
   const [uname, setUname] = useState('')
   const [headliners, setHeadliners] = useState('')
   const [co_headliners, setCo_headliners] = useState([])
@@ -20,7 +18,6 @@ const ModalMedium = ({ show, HideHandler }) => {
   const [lineups, setLineups] = useState([])
   const [lineups_2, setLineups_2] = useState([])
   const [lineups_3, setLineups_3] = useState([])
-  const [lineups_4, setLineups_4] = useState([])
   const exportRef = useRef();
   
   const { getArtistResult } = useSelector(
@@ -38,12 +35,7 @@ const ModalMedium = ({ show, HideHandler }) => {
       useEffect(() => {
         dispatch(getUname());
       }, []);
-    
-      useEffect(() => {
-        if (getArtistResult) {
-          setArtists(getArtistResult.items);
-        }
-      }, [getArtist()]);
+  
     
       useEffect(()=>{
         if(getUnameResult){
@@ -51,44 +43,43 @@ const ModalMedium = ({ show, HideHandler }) => {
         }
       },[getUname(), dispatch])
      
+     
       useEffect(() => {
-        if (artists) {
-          setHeadliners(artists.map((e)=>e.name).slice(0, 1).toString());
+        if (getArtistResult) {
+          setHeadliners(getArtistResult.items.map((e)=>e.name).slice(0, 1).toString());
         }
-      }, [artists, dispatch]);
+      }, [getArtistResult, dispatch]);
     
       useEffect(() => {
-        if (artists) {
-          setCo_headliners(artists.map((e)=>e.name).slice(1, 3));
+        if (getArtistResult) {
+          setCo_headliners(getArtistResult.items.map((e)=>e.name).slice(1, 3));
         }
-      }, [artists, dispatch]);
+      }, [getArtistResult, dispatch]);
     
       useEffect(()=>{
-        if(artists){
-          setTop_bill(artists.map((e)=>e.name).slice(3, 6))
+        if(getArtistResult){
+          setTop_bill(getArtistResult.items.map((e)=>e.name).slice(3, 6))
         }
-      }, [artists, dispatch])
+      }, [getArtistResult, dispatch])
     
       useEffect(()=>{
-        if(artists){
-          setLineups(artists.map((e)=>e.name).slice(6, 9))
+        if(getArtistResult){
+          setLineups(getArtistResult.items.map((e)=>e.name).slice(6, 9))
         }
-      }, [artists, dispatch])
+      }, [getArtistResult, dispatch])
     
        useEffect(()=>{
-        if(artists){
-          setLineups_2(artists.map((e)=>e.name).slice(9, 12))
+        if(getArtistResult){
+          setLineups_2(getArtistResult.items.map((e)=>e.name).slice(9, 12))
         }
-      }, [artists, dispatch])
+      }, [getArtistResult, dispatch])
     
       useEffect(()=>{
-        if(artists){
-          setLineups_3(artists.map((e)=>e.name).slice(12, 15))
+        if(getArtistResult){
+          setLineups_3(getArtistResult.items.map((e)=>e.name).slice(12, 15))
         }
-      }, [artists, dispatch])
-    
-    
-      
+      }, [getArtistResult, dispatch])
+  
     
     
       function capitalizeFirstLetter(string) {

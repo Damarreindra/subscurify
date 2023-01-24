@@ -12,7 +12,6 @@ import exportAsImage from "../utils/exportAsImage";
 
 const ModalShort = ({ show, HideHandler }) => {
     const dispatch = useDispatch();
-  const [artists, setArtists] = useState([]);
   const [uname, setUname] = useState('')
   const [headliners, setHeadliners] = useState('')
   const [co_headliners, setCo_headliners] = useState([])
@@ -20,7 +19,7 @@ const ModalShort = ({ show, HideHandler }) => {
   const [lineups, setLineups] = useState([])
   const [lineups_2, setLineups_2] = useState([])
   const [lineups_3, setLineups_3] = useState([])
-  const [lineups_4, setLineups_4] = useState([])  
+ 
   const exportRef = useRef();
   
   const { getArtistShortResult } = useSelector(
@@ -39,11 +38,11 @@ const ModalShort = ({ show, HideHandler }) => {
         dispatch(getUname());
       }, []);
     
-      useEffect(() => {
-        if (getArtistShortResult) {
-          setArtists(getArtistShortResult.items);
-        }
-      }, [getArtistShortResult, dispatch]);
+      // useEffect(() => {
+      //   if (getArtistShortResult) {
+      //     setArtists(getArtistShortResult.items);
+      //   }
+      // }, [getArtistShortResult, dispatch]);
     
       useEffect(()=>{
         if(getUnameResult){
@@ -52,40 +51,40 @@ const ModalShort = ({ show, HideHandler }) => {
       },[getUname(), dispatch])
      
       useEffect(() => {
-        if (artists) {
-          setHeadliners(artists.map((e)=>e.name).slice(0, 1).toString());
+        if (getArtistShortResult) {
+          setHeadliners(getArtistShortResult.items.map((e)=>e.name).slice(0, 1).toString());
         }
-      }, [artists, dispatch]);
+      }, [getArtistShortResult, dispatch]);
     
       useEffect(() => {
-        if (artists) {
-          setCo_headliners(artists.map((e)=>e.name).slice(1, 3));
+        if (getArtistShortResult) {
+          setCo_headliners(getArtistShortResult.items.map((e)=>e.name).slice(1, 3));
         }
-      }, [artists, dispatch]);
+      }, [getArtistShortResult, dispatch]);
     
       useEffect(()=>{
-        if(artists){
-          setTop_bill(artists.map((e)=>e.name).slice(3, 6))
+        if(getArtistShortResult){
+          setTop_bill(getArtistShortResult.items.map((e)=>e.name).slice(3, 6))
         }
-      }, [artists, dispatch])
+      }, [getArtistShortResult, dispatch])
     
       useEffect(()=>{
-        if(artists){
-          setLineups(artists.map((e)=>e.name).slice(6, 9))
+        if(getArtistShortResult){
+          setLineups(getArtistShortResult.items.map((e)=>e.name).slice(6, 9))
         }
-      }, [artists, dispatch])
+      }, [getArtistShortResult, dispatch])
     
        useEffect(()=>{
-        if(artists){
-          setLineups_2(artists.map((e)=>e.name).slice(9, 12))
+        if(getArtistShortResult){
+          setLineups_2(getArtistShortResult.items.map((e)=>e.name).slice(9, 12))
         }
-      }, [artists, dispatch])
+      }, [getArtistShortResult, dispatch])
     
       useEffect(()=>{
-        if(artists){
-          setLineups_3(artists.map((e)=>e.name).slice(12, 15))
+        if(getArtistShortResult){
+          setLineups_3(getArtistShortResult.items.map((e)=>e.name).slice(12, 15))
         }
-      }, [artists, dispatch])
+      }, [getArtistShortResult, dispatch])
   
     
 
@@ -126,7 +125,6 @@ const ModalShort = ({ show, HideHandler }) => {
             <div className="container d-flex align-items-center">
       <div ref={exportRef} id="preview" className="d-flex justify-content-center">
       <div id="artist">
-     
         <p id="uname" className="text-center">{capitalizeFirstLetter(uname)}'s</p>
         <p id="fest" className="text-center">LAGOON FEST 2023</p>
         
@@ -174,10 +172,9 @@ const ModalShort = ({ show, HideHandler }) => {
               )
             })}
             </div>
-           
-          </div>
           
-      </div>
+          </div>
+         </div>
       
       </div>
           </div>
