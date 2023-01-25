@@ -30,10 +30,10 @@ const ModalLong = ({ show, HideHandler }) => {
 
     useEffect(() => {
         dispatch(getArtistLong());
-      }, []);
+      }, [dispatch]);
       useEffect(() => {
         dispatch(getUname());
-      }, []);
+      }, [dispatch]);
     
       
       useEffect(()=>{

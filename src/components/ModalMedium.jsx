@@ -31,10 +31,10 @@ const ModalMedium = ({ show, HideHandler }) => {
 
     useEffect(() => {
         dispatch(getArtist());
-      }, []);
+      }, [dispatch]);
       useEffect(() => {
         dispatch(getUname());
-      }, []);
+      }, [dispatch]);
   
     
       useEffect(()=>{

@@ -33,17 +33,12 @@ const ModalShort = ({ show, HideHandler }) => {
 
     useEffect(() => {
         dispatch(getArtistShort());
-      }, []);
+      }, [dispatch]);
       useEffect(() => {
         dispatch(getUname());
-      }, []);
+      }, [dispatch]);
     
-      // useEffect(() => {
-      //   if (getArtistShortResult) {
-      //     setArtists(getArtistShortResult.items);
-      //   }
-      // }, [getArtistShortResult, dispatch]);
-    
+     
       useEffect(()=>{
         if(getUnameResult){
           setUname(getUnameResult.display_name)

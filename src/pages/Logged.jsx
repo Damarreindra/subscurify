@@ -1,13 +1,17 @@
 import React from 'react'
 import Footer from '../components/Footer'
-import HeroSection from '../components/HeroSection'
-import InfoSection from '../components/InfoSection'
 import LayerSection from '../components/LayerSection'
 import NavbarUser from '../components/Navbar'
 import TopGenre from '../components/TopGenre'
 import WelcomeSection from '../components/WelcomeSection'
 
 function Logged() {
+  window.onload =  function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+}
   return (
     <div>
         <NavbarUser/>
