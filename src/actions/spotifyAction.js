@@ -5,8 +5,12 @@ export const GET_UNAME = "GET_UNAME"
 export const GET_ARTIST_SHORT = "GET_ARTIST_MEDIUM"
 export const GET_ARTIST_LONG = "GET_ARTIST_LONG"
 
-export const getArtist = () =>{
+
+
+export const getArtist =  () =>{
+    
     const access_token = localStorage.getItem('token')
+    
     return (dispatch)=>{
         dispatch({
             type : GET_ARTIST,
@@ -17,10 +21,10 @@ export const getArtist = () =>{
             }
         })
 
-        axios({
+     axios({
             method : "GET",
             url : "https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=36&offset=5",
-             headers : {Authorization: `Bearer ${access_token}`}
+            headers : {Authorization: `Bearer ${access_token}`}
         })
             .then((res)=>{
                 dispatch({
@@ -32,6 +36,7 @@ export const getArtist = () =>{
                     }
                 })
             })
+            
             .catch((err)=>{
                 dispatch({
                     type : GET_ARTIST,
@@ -46,6 +51,7 @@ export const getArtist = () =>{
 
     }
 }
+
 
 export const getArtistShort = () =>{
     const access_token = localStorage.getItem('token')

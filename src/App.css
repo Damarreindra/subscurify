@@ -165,6 +165,7 @@ nav {
   margin-top: 200px;
   background: url('../public/pantai.jpg');
   background-size: cover;
+  background-position: center;
 }
 #preview-img{
   width: 540px;

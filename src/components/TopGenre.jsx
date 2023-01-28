@@ -2,12 +2,20 @@ import React, { useEffect, useRef, useState } from "react";
 import ShortTerm from "./ShortModal";
 import MediumTerm from "./Modal";
 import LongTerm from "./LongModal";
+import { useDispatch, useSelector } from "react-redux";
+import { getArtist, getArtistLong, getArtistShort, getUname } from "../actions/spotifyAction";
 
 function TopGenre() {
   const [access_token, set_access_token] = useState(null);
+  const dispatch = useDispatch()
+  useEffect(()=>{
+    dispatch(getArtistShort())
+  },[dispatch])
+  const { getArtistShortResult } = useSelector(
+    (state) => state.ArtistReducer
+  );
 
-  
-
+ 
   function getHashParams() {
     let hashParams = {};
     let e,

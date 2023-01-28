@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, {  } from "react";
 import Lottie from "lottie-react";
 import animationData from "../lotties/down.json";
-import animationData2 from "../lotties/flower.json";
 import animationData3 from "../lotties/sun.json";
-import axios from "axios";
-import { Button } from "react-bootstrap";
 function WelcomeSection() {
+  window.onload =  function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+}
   return (
     <>
     <div className="" id="welcome">

@@ -19,6 +19,7 @@ const ModalShort = ({ show, HideHandler }) => {
   const [lineups, setLineups] = useState([])
   const [lineups_2, setLineups_2] = useState([])
   const [lineups_3, setLineups_3] = useState([])
+  const getToken = localStorage.getItem('token')
  
   const exportRef = useRef();
   
@@ -33,10 +34,10 @@ const ModalShort = ({ show, HideHandler }) => {
 
     useEffect(() => {
         dispatch(getArtistShort());
-      }, [dispatch]);
+      }, [getToken,dispatch]);
       useEffect(() => {
         dispatch(getUname());
-      }, [dispatch]);
+      }, [getToken, dispatch]);
     
      
       useEffect(()=>{

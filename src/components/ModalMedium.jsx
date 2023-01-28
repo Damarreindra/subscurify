@@ -19,7 +19,7 @@ const ModalMedium = ({ show, HideHandler }) => {
   const [lineups_2, setLineups_2] = useState([])
   const [lineups_3, setLineups_3] = useState([])
   const exportRef = useRef();
-  
+  const getToken = localStorage.getItem('token')
   const { getArtistResult } = useSelector(
     (state) => state.ArtistReducer
   );
@@ -31,10 +31,8 @@ const ModalMedium = ({ show, HideHandler }) => {
 
     useEffect(() => {
         dispatch(getArtist());
-      }, [dispatch]);
-      useEffect(() => {
-        dispatch(getUname());
-      }, [dispatch]);
+      }, [getToken, dispatch]);
+      
   
     
       useEffect(()=>{
