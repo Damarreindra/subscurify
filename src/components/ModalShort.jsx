@@ -225,7 +225,7 @@ const ModalShort = ({ show, HideHandler }) => {
               </p>
             </div>
 
-            <div className="container d-flex align-items-center">
+            <div className="container d-flex align-items-center mt-5">
             <div
                 ref={exportRef}
                 id="preview"
