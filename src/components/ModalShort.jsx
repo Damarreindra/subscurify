@@ -196,7 +196,7 @@ const ModalShort = ({ show, HideHandler }) => {
       >
         <div id="">
           <div className="main-popup sm-2">
-            <div onClick={HideHandler} className="close float-end">
+            <div onClick={HideHandler} className="close float-start">
               <AiFillCloseCircle/>
             </div>
             <div className="d-flex justify-content-center">
