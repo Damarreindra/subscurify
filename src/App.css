@@ -11,6 +11,15 @@ nav {
   background-color: #000;
   color: #fff;
 }
+#date{
+  font-size: 18px;
+  font-family: 'Rowdies', cursive;
+  font-weight: 700;
+  color: white;
+}
+#date-container{
+  width: 64px;
+}
 .footer h4{
   font-weight: 500;
   color: #fff;
@@ -36,6 +45,9 @@ nav {
   font-weight: 700;
   color: white;
 }
+#co_headlinerer::after{
+
+}
 #fest{
   font-family: 'Rowdies', cursive;
   font-size: 32px;
@@ -49,15 +61,16 @@ nav {
   color: #fff;
   font-weight: 700;
 }
-#co_headliner{
+#headliner-container{
+  background: url("../public/paint-brush.png");
+  background-position: center;
+}
+
+#co_headlinerer{
   font-family: Futura, "Trebuchet MS";
   color: white;
-  display: flex;
- 
-}
-#co_headlinerer{
-  font-size: 30px;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 18.5px;
 }
 #spotify-logo{
   width: 150px;
@@ -65,11 +78,11 @@ nav {
 }
 #lineuper{
   font-family: Futura, "Trebuchet MS";
-  font-size: 20px;
+  font-size: 14px;
 }
 #top_biller{
   font-family: Futura, "Trebuchet MS";
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 600; 
   color: white;
 }
@@ -159,6 +172,7 @@ nav {
   margin-left: 30px;
   margin-top: -100px;
 }
+
 #preview{
   height: 650px;
   width: 600px;
@@ -215,7 +229,7 @@ nav {
   color: #f82e9e;
 }
 #artist {
-  margin-top: 50px;
+  margin-top: 0px;
   color: white;
   position: relative;
   z-index: 999;
@@ -253,30 +267,40 @@ p {
   #welcome-to-1 {
     font-size: 15px;
   }
-  #preview{
-    width: 320px;
-  }
-  #headliner{
-    font-size: 35px;
-  }
-  #artist{
-    width: 300px;
-  }
-  #lineup{
-    width: 300px;
-  }
-  #lineuper{
-    font-size: 16px;
-  }
-  #top_biller{
+  #uname{
     font-size: 18px;
+    margin-bottom: 20px;
   }
-  #co_headlinerer{
-    font-size: 20px;
-  }
-  #top-biller{
+  #fest{
     font-size: 12px;
   }
+  #date{
+    font-size: 12px;
+  }
+  #preview{
+    width: 372px;
+    height: 402px;
+    margin-top: -50px;
+  }
+  #headliner-container{
+    background: url("../public/paint-brush.png");
+    background-size: cover;
+    background-position: center;
+  }
+  #headliner{
+    font-size: 18px;
+  }
+  
+  #lineuper{
+    font-size: 9.35px;
+  }
+  #top_biller{
+    font-size: 9.35px;
+  }
+  #co_headlinerer{
+    font-size: 12px;
+  }
+  
   #img-top-container img{
     height: 100px;
   }

@@ -23,7 +23,7 @@ function WelcomeSection() {
         Welcome to Subscurify
       </div>
       <div id="welcome-to-1" className="d-flex text-center justify-content-center">
-        Find out more about your music taste below
+        Find out your spotify top artists below
       </div>
       <Lottie
         animationData={animationData}
