@@ -11,11 +11,16 @@ nav {
   background-color: #000;
   color: #fff;
 }
+#spotify_logo_poster{
+  width: 100px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
 #date{
   font-size: 18px;
   font-family: 'Rowdies', cursive;
   font-weight: 700;
-  color: white;
+  color: #053f5c;
 }
 #date-container{
   width: 64px;
@@ -58,17 +63,23 @@ nav {
 #headliner{
   font-family: Futura, "Trebuchet MS";
   font-size: 32px;
-  color: #fff;
   font-weight: 700;
+  color: #fbe478;
 }
 #headliner-container{
   background: url("../public/paint-brush.png");
   background-position: center;
 }
+#lineup-container{
+  background: url("../public/paint-brush-blue.png");
+ 
+  background-size: cover;
+}
 
 #co_headlinerer{
   font-family: Futura, "Trebuchet MS";
-  color: white;
+  color: #fff;
+  background-image: url('../public/paint-brush.png');
   font-weight: 700;
   font-size: 18.5px;
 }
@@ -84,7 +95,7 @@ nav {
   font-family: Futura, "Trebuchet MS";
   font-size: 16px;
   font-weight: 600; 
-  color: white;
+  color: #fff;
 }
 #login-btn{
   background-image: url(../public/spotify.svg);
@@ -177,15 +188,11 @@ nav {
   height: 650px;
   width: 600px;
   margin-top: 200px;
-  background: url('../public/pantai.jpg');
+  background: url('../public/p1.jpg');
   background-size: cover;
   background-position: center;
 }
-#preview-img{
-  width: 540px;
-  height: 500px;
-  position: relative;
-}
+
 .btn-circle {
   width: 100px;
   height: 100px;
@@ -277,9 +284,13 @@ p {
   #date{
     font-size: 12px;
   }
+
   #preview{
     width: 372px;
     height: 402px;
+    background: url('../public/p2.svg');
+    background-size: cover;
+  background-position: center;
     margin-top: -50px;
   }
   #headliner-container{
@@ -373,6 +384,7 @@ p {
 #tutor{
   font-size: 42px;
 }
+
 #img-top-container{
   height: 120px;
   gap: 20px;
@@ -421,7 +433,9 @@ bottom: -200px;
   }
   #img-top-container{
     height: 150px;
-    gap: 20px;
+  }
+  #btn-top{
+  
   }
   #flower{
   bottom: -320px;
@@ -429,10 +443,7 @@ bottom: -200px;
   #tutor{
     font-size: 30px;
   }
-  #img-top-container{
-    height: 100px;
-    width: 100px;
-  }
+
 
 
 }

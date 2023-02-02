@@ -17,6 +17,7 @@ const LongTerm = () => {
             onClick={HandleShowModal}
             type="button"
             className="btn mb-3 btn-lg justify-content-center"
+            id="btn-top"
             style={{backgroundColor:'#f82e9e', color:'#c4faf6', fontWeight:'700'}}
         >
            ALL TIME 

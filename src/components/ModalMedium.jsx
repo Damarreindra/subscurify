@@ -3,7 +3,6 @@ import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getArtist, getUname } from "../actions/spotifyAction";
-import html2canvas from "html2canvas";
 import exportAsImage from "../utils/exportAsImage";
 import { AiFillCloseCircle } from "react-icons/ai";
 
@@ -219,6 +218,9 @@ const ModalMedium = ({ show, HideHandler }) => {
                 className="d-flex justify-content-center"
                 >
                 <div id="artist" className=" container w-100">
+                <div className="position-absolute bottom-0 start-0" id="spotify-logo-container">
+                        <img id="spotify_logo_poster" src="../spotify_logo.svg" alt="" srcset="" />
+                      </div>
                   <p id="uname" className="text-center">
                     {capitalizeFirstLetter(uname)}'s
                   </p>
@@ -280,9 +282,14 @@ const ModalMedium = ({ show, HideHandler }) => {
                     
                     </div>
 
-                    <div className="container d-flex justify-content-center gap-3  text-center w-100">
+                    
+                    <div className="container d-flex justify-content-center gap-2 text-center w-100">
                       {co_headliners1.map((e) => {
-                        return <h1 id="co_headlinerer">{e}</h1>;
+                        return (
+                       
+                        <h1 className="" id="co_headlinerer">{e}</h1>
+                      
+                        )
                       })}
                     </div>
 
@@ -335,7 +342,7 @@ const ModalMedium = ({ show, HideHandler }) => {
                       })}
                     </div>
                   </div>
-
+                     
                 </div>
               </div>
             </div>
