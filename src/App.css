@@ -20,7 +20,7 @@ nav {
   font-size: 18px;
   font-family: 'Rowdies', cursive;
   font-weight: 700;
-  color: #053f5c;
+  color: #fff;
 }
 #date-container{
   width: 64px;
@@ -78,7 +78,7 @@ nav {
 
 #co_headlinerer{
   font-family: Futura, "Trebuchet MS";
-  color: #fff;
+  color: #053f5c;
   background-image: url('../public/paint-brush.png');
   font-weight: 700;
   font-size: 18.5px;
@@ -95,7 +95,7 @@ nav {
   font-family: Futura, "Trebuchet MS";
   font-size: 16px;
   font-weight: 600; 
-  color: #fff;
+  color: #053f5c;
 }
 #login-btn{
   background-image: url(../public/spotify.svg);
@@ -183,14 +183,20 @@ nav {
   margin-left: 30px;
   margin-top: -100px;
 }
-
-#preview{
+#bg{
   height: 650px;
   width: 600px;
-  margin-top: 200px;
-  background: url('../public/p1.jpg');
-  background-size: cover;
-  background-position: center;
+  position: absolute;
+}
+#bg img{
+  width: 37.5em;
+  height: fit-content;
+}
+#preview{
+  position: relative;
+  height: 630px;
+  width: 600px;
+  margin-bottom: 20px;
 }
 
 .btn-circle {
@@ -284,14 +290,19 @@ p {
   #date{
     font-size: 12px;
   }
-
   #preview{
-    width: 372px;
-    height: 402px;
-    background: url('../public/p2.svg');
-    background-size: cover;
-  background-position: center;
-    margin-top: -50px;
+    width: 365px;
+    height: 385px;
+  }
+  #bg{
+    width: 395px;
+   
+    height: 320px;
+  }
+  #bg img{
+    width: 23.5em;
+    margin-top: -5px;
+    margin-left: -5px;
   }
   #headliner-container{
     background: url("../public/paint-brush.png");
@@ -307,6 +318,7 @@ p {
   }
   #top_biller{
     font-size: 9.35px;
+    
   }
   #co_headlinerer{
     font-size: 12px;

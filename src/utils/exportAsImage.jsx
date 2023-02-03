@@ -1,9 +1,7 @@
 import html2canvas from "html2canvas";
 
 const exportAsImage = async (el, imageFileName) => {
-    const canvas = await html2canvas(el, {
-        scale: 2
-    });
+    const canvas = await html2canvas(el);
     const image = canvas.toDataURL("image/jpeg", 2.0);
     downloadImage(image, imageFileName);
     };

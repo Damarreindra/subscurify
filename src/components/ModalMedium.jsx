@@ -215,12 +215,13 @@ const ModalMedium = ({ show, HideHandler }) => {
               <div
                 ref={exportRef}
                 id="preview"
-                className="d-flex justify-content-center"
+                className=""
                 >
+                <div id="bg">
+                <img src="../Group 5.svg" alt="" />
+                </div>
                 <div id="artist" className=" container w-100">
-                <div className="position-absolute bottom-0 start-0" id="spotify-logo-container">
-                        <img id="spotify_logo_poster" src="../spotify_logo.svg" alt="" srcset="" />
-                      </div>
+               
                   <p id="uname" className="text-center">
                     {capitalizeFirstLetter(uname)}'s
                   </p>
