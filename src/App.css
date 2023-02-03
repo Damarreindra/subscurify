@@ -263,9 +263,7 @@ p {
   font-family: "Kanit", sans-serif;
 }
 @media only screen and (max-width : 410px) {
-  #preview{
-    width: 10px;
-  }
+ 
 }
 @media only screen and (max-width: 768px) {
   #welcome-text {
@@ -293,12 +291,12 @@ p {
     font-size: 12px;
   }
   #preview{
-    width: 350px;
+    width: 360px;
     height: 385px;
   }
   
   #bg img{
-    width: 22.5em;
+    width: 23em;
     margin-top: -5px;
     margin-left: -5px;
   }
