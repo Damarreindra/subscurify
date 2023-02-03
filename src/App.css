@@ -187,15 +187,15 @@ nav {
   position: absolute;
 }
 #bg img{
-  width: 37.5em;
-  height: fit-content;
+  width: 38em;
+  margin-top: -3px;
+  margin-left: -1px;
 }
 #preview{
   position: relative;
-  height: 625px;
+  height: 630px;
   width: 600px;
   margin-bottom: 20px;
-  
   /*  */
 }
 
@@ -291,17 +291,15 @@ p {
     font-size: 12px;
   }
   #preview{
-    width: 360px;
-    height: 385px;
+    width: 395px;
+    height: 400px;
   }
-  
   #bg img{
     width: 23em;
     margin-top: -5px;
     margin-left: -5px;
   }
   #headliner-container{
-    background: url("../public/paint-brush.png");
     background-size: cover;
     background-position: center;
   }
@@ -340,7 +338,7 @@ p {
     margin-top: 150px;
   }
   #artist {
-    /* margin-left: 150px; */
+   
   }
   #top-genre {
     height: 600px;
@@ -392,14 +390,14 @@ p {
     and (device-width : 375px) 
     and (device-height : 812px) 
     and (-webkit-device-pixel-ratio : 3) { 
+#bg img{
+  margin-left: -20px;
+  width: 340px;
+}
+#preview{
+  width: 340px;
+}
 
-#img-top-container{
-  height: 120px;
-  gap: 20px;
-}
-#img-top-container img{
-  height: 100px;
-}
 
 }
 

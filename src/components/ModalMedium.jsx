@@ -180,20 +180,17 @@ const ModalMedium = ({ show, HideHandler }) => {
         onHide={HideHandler}
         size="lg"
         className=""
-        fullscreen={fullscreen}
-        
+        dialogClassName="modal-50w"
       >
-        <div id="">
-          <div className="main-popup sm-2">
-            <div onClick={HideHandler} className="close float-start">
-             <AiFillCloseCircle/>
-            </div>
-            <div className="d-flex justify-content-center">
+        <Modal.Header closeButton>
+        </Modal.Header>
+        <Modal.Body>
+        <div className="d-flex justify-content-center">
               <button
                 onClick={() =>
                   exportAsImage(
                     exportRef.current,
-                    getUnameResult.display_name + " Med Term"
+                    getUnameResult.display_name + " Short Term"
                   )
                 }
                 type="button"
@@ -206,18 +203,20 @@ const ModalMedium = ({ show, HideHandler }) => {
               >
                 DOWNLOAD
               </button>
-            </div>
+              </div>
+
             
-            <div id="modul-container" className="container d-flex justify-content-center">
-            <div
+
+              <div className="container d-flex justify-content-center mt-2">
+              <div
                 ref={exportRef}
                 id="preview"
-                className=""
+                className="bg-black"
                 >
                 <div id="bg">
                 <img src="../Group 5.svg" alt="" />
                 </div>
-                <div id="artist" className=" container w-100">
+                <div id="artist" className="container w-100">
                
                   <p id="uname" className="text-center">
                     {capitalizeFirstLetter(uname)}'s
@@ -343,11 +342,8 @@ const ModalMedium = ({ show, HideHandler }) => {
                      
                 </div>
               </div>
-              
-            </div>
-            
-          </div>
-        </div>
+              </div>
+        </Modal.Body>
       </Modal>
     </div>
   );

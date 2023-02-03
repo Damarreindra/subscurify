@@ -180,7 +180,7 @@ const ModalLong = ({ show, HideHandler }) => {
   }
 
   return (
-    <div className="mt-5">
+    <>
       <Modal
         show={show}
         aria-labelledby="contained-modal-title-vcenter"
@@ -354,7 +354,7 @@ const ModalLong = ({ show, HideHandler }) => {
           </div>
         </div>
       </Modal>
-    </div>
+    </>
   );
 };
 
