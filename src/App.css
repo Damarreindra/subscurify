@@ -388,10 +388,10 @@ p {
   }
 }
 /* iphone x */
-@media only screen and  (device-width: 375px) and (device-height: 812px)  {
-#tutor{
-  font-size: 42px;
-}
+@media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) { 
 
 #img-top-container{
   height: 120px;
@@ -400,9 +400,7 @@ p {
 #img-top-container img{
   height: 100px;
 }
-#flower{
-bottom: -200px;
-}
+
 }
 
 /* iphone 6/7/8 */
