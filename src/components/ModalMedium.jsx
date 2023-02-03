@@ -12,7 +12,7 @@ const ModalMedium = ({ show, HideHandler }) => {
   const [headliners, setHeadliners] = useState("");
   const [headliners1, setHeadliners1] = useState("");
   const [headliners2, setHeadliners2] = useState("");
-  
+  const [fullscreen, setFullscreen] = useState(true);
   const [co_headliners, setCo_headliners] = useState([]);
   const [co_headliners1, setCo_headliners1] = useState([]);
   const [co_headliners2, setCo_headliners2] = useState([]);
@@ -179,7 +179,8 @@ const ModalMedium = ({ show, HideHandler }) => {
         aria-labelledby="contained-modal-title-vcenter"
         onHide={HideHandler}
         size="lg"
-        className="d-flex"
+        className=""
+        fullscreen={fullscreen}
         
       >
         <div id="">
@@ -196,7 +197,7 @@ const ModalMedium = ({ show, HideHandler }) => {
                   )
                 }
                 type="button"
-                className="btn mt-5 btn-lg justify-content-center"
+                className="btn btn-lg justify-content-center"
                 style={{
                   backgroundColor: "#f82e9e",
                   color: "#c4faf6",
@@ -206,12 +207,8 @@ const ModalMedium = ({ show, HideHandler }) => {
                 DOWNLOAD
               </button>
             </div>
-            <div>
-              <p className="text-center">
-                if no result u can just refresh the web
-              </p>
-            </div>
-            <div id="modul-container" className="container d-flex align-items-center mt-5">
+            
+            <div id="modul-container" className="container d-flex justify-content-center">
             <div
                 ref={exportRef}
                 id="preview"

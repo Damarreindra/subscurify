@@ -18,6 +18,7 @@ const ModalShort = ({ show, HideHandler }) => {
   const [co_headliners, setCo_headliners] = useState([]);
   const [co_headliners1, setCo_headliners1] = useState([]);
   const [co_headliners2, setCo_headliners2] = useState([]);
+  const [fullscreen, setFullscreen] = useState(true);
   const [top_bill, setTop_bill] = useState([]);
   const [top_bill1, setTop_bill1] = useState([]);
   const [top_bill2, setTop_bill2] = useState([]);
@@ -192,6 +193,7 @@ const ModalShort = ({ show, HideHandler }) => {
         aria-labelledby="contained-modal-title-vcenter"
         onHide={HideHandler}
         size="lg"
+        fullscreen={fullscreen}
         className="d-flex"
       >
         <div id="">
@@ -208,7 +210,7 @@ const ModalShort = ({ show, HideHandler }) => {
                   )
                 }
                 type="button"
-                className="btn mt-5 btn-lg justify-content-center"
+                className="btn btn-lg justify-content-center"
                 style={{
                   backgroundColor: "#f82e9e",
                   color: "#c4faf6",
@@ -219,13 +221,9 @@ const ModalShort = ({ show, HideHandler }) => {
               </button>
             </div>
 
-            <div>
-              <p className="text-center">
-                if no result u can just refresh the web
-              </p>
-            </div>
+            
 
-            <div className="container d-flex align-items-center mt-5">
+            <div className="container d-flex justify-content-center mt-2">
             <div
                 ref={exportRef}
                 id="preview"
