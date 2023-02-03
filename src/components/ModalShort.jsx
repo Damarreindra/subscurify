@@ -231,6 +231,9 @@ const ModalShort = ({ show, HideHandler }) => {
                 id="preview"
                 className="d-flex justify-content-center"
                 >
+                   <div id="bg">
+                <img src="../Group 5.svg" alt="" />
+                </div>
                 <div id="artist" className=" container w-100">
                   <p id="uname" className="text-center">
                     {capitalizeFirstLetter(uname)}'s
