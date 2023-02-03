@@ -8,7 +8,6 @@ import { AiFillCloseCircle } from "react-icons/ai";
 
 const ModalMedium = ({ show, HideHandler }) => {
   const dispatch = useDispatch();
-
   const [uname, setUname] = useState("");
   const [headliners, setHeadliners] = useState("");
   const [headliners1, setHeadliners1] = useState("");
@@ -181,6 +180,7 @@ const ModalMedium = ({ show, HideHandler }) => {
         onHide={HideHandler}
         size="lg"
         className="d-flex"
+        
       >
         <div id="">
           <div className="main-popup sm-2">
@@ -212,7 +212,7 @@ const ModalMedium = ({ show, HideHandler }) => {
               </p>
             </div>
             <div id="modul-container" className="container d-flex align-items-center mt-5">
-              <div
+            <div
                 ref={exportRef}
                 id="preview"
                 className=""
@@ -346,7 +346,9 @@ const ModalMedium = ({ show, HideHandler }) => {
                      
                 </div>
               </div>
+              
             </div>
+            
           </div>
         </div>
       </Modal>

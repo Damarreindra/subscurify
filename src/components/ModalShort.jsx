@@ -229,12 +229,13 @@ const ModalShort = ({ show, HideHandler }) => {
             <div
                 ref={exportRef}
                 id="preview"
-                className="d-flex justify-content-center"
+                className=""
                 >
-                   <div id="bg">
+                <div id="bg">
                 <img src="../Group 5.svg" alt="" />
                 </div>
                 <div id="artist" className=" container w-100">
+               
                   <p id="uname" className="text-center">
                     {capitalizeFirstLetter(uname)}'s
                   </p>
@@ -296,9 +297,14 @@ const ModalShort = ({ show, HideHandler }) => {
                     
                     </div>
 
-                    <div className="container d-flex justify-content-center gap-3  text-center w-100">
+                    
+                    <div className="container d-flex justify-content-center gap-2 text-center w-100">
                       {co_headliners1.map((e) => {
-                        return <h1 id="co_headlinerer">{e}</h1>;
+                        return (
+                       
+                        <h1 className="" id="co_headlinerer">{e}</h1>
+                      
+                        )
                       })}
                     </div>
 
@@ -351,10 +357,10 @@ const ModalShort = ({ show, HideHandler }) => {
                       })}
                     </div>
                   </div>
-
+                     
                 </div>
               </div>
-            </div>
+              </div>
           </div>
         </div>
       </Modal>

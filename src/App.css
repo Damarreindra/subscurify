@@ -20,7 +20,7 @@ nav {
   font-size: 18px;
   font-family: 'Rowdies', cursive;
   font-weight: 700;
-  color: #fff;
+  color: #053f5c;
 }
 #date-container{
   width: 64px;
@@ -58,7 +58,7 @@ nav {
   font-size: 32px;
   font-weight: 700;
   margin-top: -30px;
-  color: orange;
+  color: #fbe478;
 }
 #headliner{
   font-family: Futura, "Trebuchet MS";
@@ -184,8 +184,6 @@ nav {
   margin-top: -100px;
 }
 #bg{
-  height: 650px;
-  width: 600px;
   position: absolute;
 }
 #bg img{
@@ -194,9 +192,11 @@ nav {
 }
 #preview{
   position: relative;
-  height: 630px;
+  height: 625px;
   width: 600px;
   margin-bottom: 20px;
+  
+  /*  */
 }
 
 .btn-circle {
@@ -262,8 +262,10 @@ nav {
 p {
   font-family: "Kanit", sans-serif;
 }
-@media (min-width:320px)  { 
-  
+@media only screen and (max-width : 410px) {
+  #preview{
+    width: 10px;
+  }
 }
 @media only screen and (max-width: 768px) {
   #welcome-text {
@@ -291,14 +293,12 @@ p {
     font-size: 12px;
   }
   #preview{
-    width: 365px;
+    width: 350px;
     height: 385px;
   }
-  #bg{
-   
-  }
+  
   #bg img{
-    width: 23.5em;
+    width: 22.5em;
     margin-top: -5px;
     margin-left: -5px;
   }
