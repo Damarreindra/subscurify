@@ -174,18 +174,20 @@ const ModalMedium = ({ show, HideHandler }) => {
 
   return (
     <div className="mt-5">
-      <Modal
+    <Modal
         show={show}
         aria-labelledby="contained-modal-title-vcenter"
         onHide={HideHandler}
         size="lg"
-        className=""
-        dialogClassName="modal-50w"
+        fullscreen={fullscreen}
+        className="d-flex"
       >
-        <Modal.Header closeButton>
-        </Modal.Header>
-        <Modal.Body>
-        <div className="d-flex justify-content-center">
+        <div id="">
+          <div className="main-popup sm-2">
+            <div onClick={HideHandler} className="close float-start">
+              <AiFillCloseCircle/>
+            </div>
+            <div className="d-flex justify-content-center">
               <button
                 onClick={() =>
                   exportAsImage(
@@ -211,12 +213,12 @@ const ModalMedium = ({ show, HideHandler }) => {
               <div
                 ref={exportRef}
                 id="preview"
-                className="bg-black"
+                className=""
                 >
                 <div id="bg">
                 <img src="../Group 5.svg" alt="" />
                 </div>
-                <div id="artist" className="container w-100">
+                <div id="artist" className=" container w-100">
                
                   <p id="uname" className="text-center">
                     {capitalizeFirstLetter(uname)}'s
@@ -343,7 +345,8 @@ const ModalMedium = ({ show, HideHandler }) => {
                 </div>
               </div>
               </div>
-        </Modal.Body>
+          </div>
+        </div>
       </Modal>
     </div>
   );
