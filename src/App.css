@@ -196,7 +196,9 @@ nav {
   height: 630px;
   width: 600px;
   margin-bottom: 20px;
-  /*  */
+  /* background: url("../public/Group 5.svg");
+  background-position: center;
+  background-size: cover; */
 }
 
 .btn-circle {
@@ -290,14 +292,14 @@ p {
   #date{
     font-size: 12px;
   }
-  #preview{
-    width: 395px;
-    height: 400px;
-  }
   #bg img{
-    width: 23em;
-    margin-top: -5px;
-    margin-left: -5px;
+    width: 355px;
+   
+  }
+  #preview{
+    width: 353px;
+    height: 365px;
+   
   }
   #headliner-container{
     background-size: cover;
@@ -391,11 +393,13 @@ p {
     and (device-height : 812px) 
     and (-webkit-device-pixel-ratio : 3) { 
 #bg img{
-  margin-left: -20px;
-  width: 340px;
+  width: 355px;
+ 
 }
 #preview{
-  width: 340px;
+  width: 353px;
+  height: 365px;
+ 
 }
 
 

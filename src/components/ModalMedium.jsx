@@ -180,6 +180,7 @@ const ModalMedium = ({ show, HideHandler }) => {
         onHide={HideHandler}
         size="lg"
         fullscreen={fullscreen}
+       
         className="d-flex"
       >
         <div id="">
@@ -213,12 +214,12 @@ const ModalMedium = ({ show, HideHandler }) => {
               <div
                 ref={exportRef}
                 id="preview"
-                className=""
+                className="d-flex justify-content-center"
                 >
                 <div id="bg">
                 <img src="../Group 5.svg" alt="" />
                 </div>
-                <div id="artist" className=" container w-100">
+                <div id="artist" className="container w-100">
                
                   <p id="uname" className="text-center">
                     {capitalizeFirstLetter(uname)}'s
