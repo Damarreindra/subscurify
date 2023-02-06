@@ -219,18 +219,18 @@ const ModalShort = ({ show, HideHandler }) => {
               >
                 DOWNLOAD
               </button>
-            </div>
+              </div>
 
             
 
-            <div className="container d-flex justify-content-center mt-2">
-            <div
+              <div className="container d-flex justify-content-center mt-2">
+              <div
                 ref={exportRef}
                 id="preview"
                 className=""
                 >
                 <div id="bg">
-                <img src="../Group 5.svg" alt="" />
+                <img src="../bg-img.jpg" alt="" />
                 </div>
                 <div id="artist" className=" container w-100">
                

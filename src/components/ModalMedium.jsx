@@ -217,7 +217,7 @@ const ModalMedium = ({ show, HideHandler }) => {
                 className="d-flex justify-content-center"
                 >
                 <div id="bg">
-                <img src="../Group 5.svg" alt="" />
+                <img src="../bg-img.jpg" alt="" />
                 </div>
                 <div id="artist" className="container w-100">
                
