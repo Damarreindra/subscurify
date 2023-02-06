@@ -22,42 +22,49 @@ const ModalMedium = ({ show, HideHandler }) => {
   const [lineups, setLineups] = useState([]);
   const [lineups1, setLineups1] = useState([]);
   const [lineups2, setLineups2] = useState([]);
-  const day1 = new Date(Date.now()).getDay()
-  const day2 = new Date(Date.now()+ ( 3600 * 1000 * 24)).getDay()
-  const day3 = new Date(Date.now()+ ( 3600 * 1000 * 24)*2).getDay()
-  
+  const day1 = new Date(Date.now()).getDay();
+  const day2 = new Date(Date.now() + 3600 * 1000 * 24).getDay();
+  const day3 = new Date(Date.now() + 3600 * 1000 * 24 * 2).getDay();
+
   const getDayName = (day) => {
-    if(day === 0){
-      return(
-        "SUN"
-      )
-    }else if(day === 1){
-      return("MON")
+    if (day === 0) {
+      return "SUN";
+    } else if (day === 1) {
+      return "MON";
+    } else if (day === 2) {
+      return "TUE";
+    } else if (day === 3) {
+      return "WED";
+    } else if (day === 4) {
+      return "THU";
+    } else if (day === 5) {
+      return "FRI";
+    } else if (day === 6) {
+      return "SAT";
     }
-    else if(day === 2){
-      return("TUE")
-    }
-    else if(day === 3){
-      return("WED")
-    }
-    else if(day === 4){
-      return("THU")
-    }
-    else if(day === 5){
-      return("FRI")
-    }
-    else if(day === 6){
-      return("SAT")
-    }
-  }
-  
-  const date1 = new Date(Date.now()).getDate()
-  const date2 = new Date(Date.now() + ( 3600 * 1000 * 24)).getDate()
-  const date3 = new Date(Date.now() + (( 3600 * 1000 * 24)*2)).getDate()
-  const month = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+  };
+
+  const date1 = new Date(Date.now()).getDate();
+  const date2 = new Date(Date.now() + 3600 * 1000 * 24).getDate();
+  const date3 = new Date(Date.now() + 3600 * 1000 * 24 * 2).getDate();
+  const month = [
+    "JAN",
+    "FEB",
+    "MAR",
+    "APR",
+    "MAY",
+    "JUN",
+    "JUL",
+    "AUG",
+    "SEP",
+    "OCT",
+    "NOV",
+    "DEC",
+  ];
   const monthName1 = month[new Date(Date.now()).getMonth()];
-  const monthName2 = month[new Date(Date.now()+( 3600 * 1000 * 24)).getMonth()];
-  const monthName3 = month[new Date(Date.now()+( 3600 * 1000 * 24)*2).getMonth()];
+  const monthName2 = month[new Date(Date.now() + 3600 * 1000 * 24).getMonth()];
+  const monthName3 =
+    month[new Date(Date.now() + 3600 * 1000 * 24 * 2).getMonth()];
 
   const exportRef = useRef();
   const getToken = localStorage.getItem("token");
@@ -108,26 +115,19 @@ const ModalMedium = ({ show, HideHandler }) => {
     }
   }, [getArtistResult, dispatch]);
 
-  
   useEffect(() => {
     if (getArtistResult) {
-      setCo_headliners(
-        getArtistResult.items.map((e) => e.name).slice(3, 6)
-      );
+      setCo_headliners(getArtistResult.items.map((e) => e.name).slice(3, 6));
     }
   }, [getArtistResult, dispatch]);
   useEffect(() => {
     if (getArtistResult) {
-      setCo_headliners1(
-        getArtistResult.items.map((e) => e.name).slice(6, 9)
-      );
+      setCo_headliners1(getArtistResult.items.map((e) => e.name).slice(6, 9));
     }
   }, [getArtistResult, dispatch]);
   useEffect(() => {
     if (getArtistResult) {
-      setCo_headliners2(
-        getArtistResult.items.map((e) => e.name).slice(9, 12)
-      );
+      setCo_headliners2(getArtistResult.items.map((e) => e.name).slice(9, 12));
     }
   }, [getArtistResult, dispatch]);
 
@@ -162,65 +162,37 @@ const ModalMedium = ({ show, HideHandler }) => {
       setLineups2(getArtistResult.items.map((e) => e.name).slice(25, 28));
     }
   }, [getArtistResult, dispatch]);
-  
- 
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  
-  
-
   return (
     <div className="mt-5">
-    <Modal
+      <Modal
         show={show}
         aria-labelledby="contained-modal-title-vcenter"
         onHide={HideHandler}
         size="lg"
         fullscreen={fullscreen}
-       
         className="d-flex"
       >
         <div id="">
           <div className="main-popup sm-2">
             <div onClick={HideHandler} className="close float-start">
-              <AiFillCloseCircle/>
+              <AiFillCloseCircle />
             </div>
-            <div className="d-flex justify-content-center">
-              <button
-                onClick={() =>
-                  exportAsImage(
-                    exportRef.current,
-                    getUnameResult.display_name + " Short Term"
-                  )
-                }
-                type="button"
-                className="btn btn-lg justify-content-center"
-                style={{
-                  backgroundColor: "#f82e9e",
-                  color: "#c4faf6",
-                  fontWeight: "700",
-                }}
-              >
-                DOWNLOAD
-              </button>
-              </div>
 
-            
-
-              <div className="container d-flex justify-content-center mt-2">
+            <div className="container d-flex justify-content-center mt-2">
               <div
                 ref={exportRef}
                 id="preview"
                 className="d-flex justify-content-center"
-                >
+              >
                 <div id="bg">
-                <img src="../bg-img.jpg" alt="" />
+                  <img src="../bg-img.jpg" alt="" />
                 </div>
                 <div id="artist" className="container w-100">
-               
                   <p id="uname" className="text-center">
                     {capitalizeFirstLetter(uname)}'s
                   </p>
@@ -230,23 +202,30 @@ const ModalMedium = ({ show, HideHandler }) => {
 
                   <div id="day1" className="container text-center w-100">
                     <div className="container text-center w-100">
-                    <div id="date-container" className="float-start">
-                  <h1 id="date" className="">{getDayName(day1)}</h1>
-                  </div>
-                  <div id="date-container" className="float-end">
-                      <h1 id="date" className="">{monthName1} {date1}</h1>
+                      <div id="date-container" className="float-start">
+                        <h1 id="date" className="">
+                          {getDayName(day1)}
+                        </h1>
+                      </div>
+                      <div id="date-container" className="float-end">
+                        <h1 id="date" className="">
+                          {monthName1} {date1}
+                        </h1>
                       </div>
                       <div id="headliner-container">
-                      <h1 id="headliner" className="">
-                        {headliners.toUpperCase()}
-                      </h1>
+                        <h1 id="headliner" className="">
+                          {headliners.toUpperCase()}
+                        </h1>
                       </div>
-                    
                     </div>
 
                     <div className="container d-flex justify-content-center gap-2 text-center w-100">
                       {co_headliners.map((e) => {
-                        return <h1 className="" id="co_headlinerer">{e}</h1>;
+                        return (
+                          <h1 className="" id="co_headlinerer">
+                            {e}
+                          </h1>
+                        );
                       })}
                     </div>
 
@@ -261,35 +240,34 @@ const ModalMedium = ({ show, HideHandler }) => {
                         return <h1 id="top_biller">{e}</h1>;
                       })}
                     </div>
-                    
-                    
                   </div>
-
 
                   <div id="day2" className="container text-center w-100">
-                  <div className="container text-center w-100">
-                    <div id="date-container" className="float-start">
-                  <h1 id="date" className="">{getDayName(day2)}</h1>
-                  </div>
-                  <div id="date-container" className="float-end">
-                      <h1 id="date" className="">{monthName2} {date2}</h1>
+                    <div className="container text-center w-100">
+                      <div id="date-container" className="float-start">
+                        <h1 id="date" className="">
+                          {getDayName(day2)}
+                        </h1>
+                      </div>
+                      <div id="date-container" className="float-end">
+                        <h1 id="date" className="">
+                          {monthName2} {date2}
+                        </h1>
                       </div>
                       <div id="headliner-container">
-                      <h1 id="headliner" className="">
-                        {headliners1.toUpperCase()}
-                      </h1>
+                        <h1 id="headliner" className="">
+                          {headliners1.toUpperCase()}
+                        </h1>
                       </div>
-                    
                     </div>
 
-                    
                     <div className="container d-flex justify-content-center gap-2 text-center w-100">
                       {co_headliners1.map((e) => {
                         return (
-                       
-                        <h1 className="" id="co_headlinerer">{e}</h1>
-                      
-                        )
+                          <h1 className="" id="co_headlinerer">
+                            {e}
+                          </h1>
+                        );
                       })}
                     </div>
 
@@ -304,24 +282,25 @@ const ModalMedium = ({ show, HideHandler }) => {
                         return <h1 id="top_biller">{e}</h1>;
                       })}
                     </div>
-                    
                   </div>
-
 
                   <div id="day3" className="container text-center w-100">
-                  <div className="container text-center w-100">
-                  <div id="date-container" className="float-start">
-                  <h1 id="date" className="">{getDayName(day3)}</h1>
-                  </div>
-                  <div id="date-container" className="float-end">
-                      <h1 id="date" className="">{monthName3} {date3}</h1>
+                    <div className="container text-center w-100">
+                      <div id="date-container" className="float-start">
+                        <h1 id="date" className="">
+                          {getDayName(day3)}
+                        </h1>
+                      </div>
+                      <div id="date-container" className="float-end">
+                        <h1 id="date" className="">
+                          {monthName3} {date3}
+                        </h1>
                       </div>
                       <div id="headliner-container">
-                      <h1 id="headliner" className="">
-                        {headliners2.toUpperCase()}
-                      </h1>
+                        <h1 id="headliner" className="">
+                          {headliners2.toUpperCase()}
+                        </h1>
                       </div>
-                    
                     </div>
 
                     <div className="container d-flex justify-content-center gap-3 text-center w-100">
@@ -342,10 +321,28 @@ const ModalMedium = ({ show, HideHandler }) => {
                       })}
                     </div>
                   </div>
-                     
                 </div>
               </div>
-              </div>
+            </div>
+            <div id="" className="d-flex justify-content-center">
+              <button
+                onClick={() =>
+                  exportAsImage(
+                    exportRef.current,
+                    getUnameResult.display_name + " Short Term"
+                  )
+                }
+                type="button"
+                className="btn btn-lg justify-content-center"
+                style={{
+                  backgroundColor: "#f82e9e",
+                  color: "#c4faf6",
+                  fontWeight: "700",
+                }}
+              >
+                DOWNLOAD
+              </button>
+            </div>
           </div>
         </div>
       </Modal>
