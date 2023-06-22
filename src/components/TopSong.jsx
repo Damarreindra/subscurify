@@ -16,7 +16,7 @@ function TopSong() {
       <div id="top-song" className="d-flex align-items-center justify-content-center">
       
         <div className="text-center" id="tutor">
-        <p>TOP SONGS SECTION</p>
+        <p className="mt-5">TOP SONGS SECTION</p>
          <p className="fs-4"> CLICK ON A TIME FRAME, PALS.</p>
          </div>
         
