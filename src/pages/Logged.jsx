@@ -6,6 +6,7 @@ import LayerSection from '../components/LayerSection'
 import NavbarUser from '../components/Navbar'
 import TopGenre from '../components/TopGenre'
 import WelcomeSection from '../components/WelcomeSection'
+import TopSong from '../components/TopSong'
 
 function Logged() {
   return (
@@ -13,6 +14,7 @@ function Logged() {
         <NavbarUser/>
         <WelcomeSection/>
         <TopGenre/>
+        <TopSong/>
         <LayerSection/>
         <Footer/>
     </div>

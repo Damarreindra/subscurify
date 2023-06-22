@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import ShortTerm from "./ShortModal";
 import MediumTerm from "./Modal";
 import LongTerm from "./LongModal";
+import SongModal from "./SongModal";
 import { useDispatch, useSelector } from "react-redux";
 import { getArtist, getArtistLong, getArtistShort, getUname } from "../actions/spotifyAction";
 
@@ -40,7 +41,8 @@ function TopGenre() {
       <div id="top-genre" className="d-flex align-items-center justify-content-center">
       
         <div className="text-center" id="tutor">
-         <p> CLICK ON A TIME FRAME, MY DUDE.</p>
+         <p>TOP ARTISTS SECTION</p>
+         <p className="fs-4"> CLICK ON A TIME FRAME, MY DUDE.</p>
          </div>
        <div id="img-top-container" className="d-flex justify-content-around">
        <img src="https://user-images.githubusercontent.com/80618060/211764062-ef5d58d9-5787-4670-ac87-415ac84b46b9.png" alt="" />

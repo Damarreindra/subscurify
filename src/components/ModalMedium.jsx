@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getArtist, getUname } from "../actions/spotifyAction";
+import { getArtist, getArtistShort, getUname } from "../actions/spotifyAction";
 import exportAsImage from "../utils/exportAsImage";
 import { AiFillCloseCircle } from "react-icons/ai";
 
@@ -23,8 +23,8 @@ const ModalMedium = ({ show, HideHandler }) => {
   const [lineups1, setLineups1] = useState([]);
   const [lineups2, setLineups2] = useState([]);
   const day1 = new Date(Date.now()).getDay();
-  const day2 = new Date(Date.now() + 3600 * 1000 * 24).getDay();
-  const day3 = new Date(Date.now() + 3600 * 1000 * 24 * 2).getDay();
+  const day2 = day1 + 1
+  const day3 = day2 + 1
 
   const getDayName = (day) => {
     if (day === 0) {
@@ -81,6 +81,8 @@ const ModalMedium = ({ show, HideHandler }) => {
       setUname(getUnameResult.display_name);
     }
   }, [getUname(), dispatch]);
+
+  
 
   useEffect(() => {
     if (getArtistResult) {

@@ -3,9 +3,6 @@ import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getArtistShort, getUname } from "../actions/spotifyAction";
-import html2canvas from "html2canvas";
-import axios from "axios";
-import fileDownload from "js-file-download";
 import exportAsImage from "../utils/exportAsImage";
 import { AiFillCloseCircle } from "react-icons/ai";
 
@@ -186,6 +183,7 @@ const ModalShort = ({ show, HideHandler }) => {
       setLineups4(getArtistShortResult.items.map((e) => e.name).slice(31, 36));
     }
   }, [getArtistShortResult, dispatch]);
+
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
