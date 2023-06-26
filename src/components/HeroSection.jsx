@@ -36,7 +36,7 @@ const logout = () =>{
     <div id='hero'>
         <div id='logo'>
         <img id='img-logo' src="/logo.svg" alt="" srcset="" />
-        <p id='logo-text'>Create a festival lineup from your top artists and compare it to others with Subscurify</p>
+        <p id='logo-text'>Create a festival lineup from your top artists or Get paper bill of your top songs with Subscurify</p>
         
         <Button id='login-btn' className='btn-circle' variant="dark"><a className='' style={{fontSize:'16px',textDecoration:'none', color:'#c4fa6f'}}  href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}>Login With Spotify</a>
         </Button>
